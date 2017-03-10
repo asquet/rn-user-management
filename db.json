@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Wasia Poupquin",
+      "birthDate": "1985-11-15",
+      "userPic": "https://avatarfiles.alphacoders.com/761/thumb-76101.png",
+      "managerId": null,
+      "positionId": 1
+    }
+  ],
+  "positions":[
+    {
+      "id": 1,
+      "name": "Worker"
+    }
+  ]
+}
