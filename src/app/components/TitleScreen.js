@@ -1,19 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import { View, Text } from 'react-native';
+import { titleScreenStyles } from '../stylesheet';
 import Button from './common/Button';
 
-export const titleStyles = StyleSheet.create({
-  appName: {
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-});
 
 export default function TitleScreen({ proceed }) {
   return (
-    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center' }}>
-      <Text style={titleStyles.appName}>
+    <View style={titleScreenStyles.container}>
+      <Text style={titleScreenStyles.appName}>
         Hello!
       </Text>
 

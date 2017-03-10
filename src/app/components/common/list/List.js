@@ -1,22 +1,9 @@
 import React from 'react';
-import { View, ListView, Text, TouchableHighlight, StyleSheet } from 'react-native';
+import { View, ListView, Text, TouchableHighlight } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import FilterHeading from './FilterHeading';
 import Button from '../../common/Button';
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    flex: 1,
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  separator: {
-    flex: 1,
-    borderBottomWidth: 1,
-    borderBottomColor: '#c0c0c0',
-  },
-});
+import { commonStyles, listStyles } from '../../../stylesheet';
 
 export default function List(
   {
@@ -29,7 +16,7 @@ export default function List(
   },
 ) {
   return (
-    <View style={{ backgroundColor: 'white' }}>
+    <View style={commonStyles.container}>
       <SwipeListView
         dataSource={dataSource}
         renderRow={rowData => renderListItem(rowData)}
@@ -39,20 +26,16 @@ export default function List(
               rowMap[`${secId}${rowId}`].closeRow();
               onDelete(rowData.id);
             }}
-            style={{
-              alignSelf: 'flex-end',
-              backgroundColor: 'red',
-              height: 50,
-              padding: 10,
-              width: 80,
-            }}
+            style={listStyles.deleteButton}
           >
             <View>
-              <Text style={{ color: 'white', fontSize: 18 }}>Delete</Text>
+              <Text style={listStyles.deleteButtonText}>Delete</Text>
             </View>
           </TouchableHighlight>
         )}
-        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+        renderSeparator={(sectionId, rowId) => (
+          <View key={rowId} style={listStyles.listSeparator} />
+        )}
         renderHeader={() => (<FilterHeading searchString={searchString} onChangeText={onSearch} />)}
         renderFooter={() => (<View style={{ height: 85 }} />)}
         rightOpenValue={-80}
@@ -62,16 +45,7 @@ export default function List(
         <Button
           buttonText="+"
           onPress={onAdd}
-          bodyStyles={{
-            position: 'absolute',
-            bottom: 25,
-            right: 25,
-            backgroundColor: 'white',
-            height: 60,
-            width: 60,
-            borderRadius: 30,
-            justifyContent: 'center',
-          }}
+          bodyStyles={listStyles.addButton}
         />
       }
     </View>

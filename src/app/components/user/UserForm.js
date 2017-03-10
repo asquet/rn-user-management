@@ -1,38 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
-import DatePicker from 'react-native-datepicker';
+import { View, Text, Picker } from 'react-native';
+import DatePicker from '../common/form/DatePicker';
 import ImagePicker from '../common/form/ImagePicker';
 import Autocomplete from '../common/form/Autocomplete';
 import InputRow from '../common/form/InputRow';
 import Button from '../common/Button';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'white',
-  },
-  header: {
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  controlsWrapper: {
-    flexDirection: 'row',
-  },
-  controlsSave: {
-    flex: 1,
-    borderColor: '#55dd66',
-  },
-  controlsCancel: {
-    flex: 1,
-    borderColor: '#dd5555',
-  },
-});
+import { formStyles } from '../../stylesheet';
 
 export default function UserForm({ isNew, user, onChange, onSave, onCancel, managers, positions }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>
+    <View style={formStyles.container}>
+      <Text style={formStyles.header}>
         { isNew ? 'Create user' : 'EditUser'}
       </Text>
       <InputRow
@@ -45,7 +23,6 @@ export default function UserForm({ isNew, user, onChange, onSave, onCancel, mana
         label="Birth date"
       >
         <DatePicker
-          style={{ flex: 1 }}
           date={user.birthDate}
           mode="date"
           placeholder="Select Birth date"
@@ -88,16 +65,16 @@ export default function UserForm({ isNew, user, onChange, onSave, onCancel, mana
         </Picker>
       </InputRow>
 
-      <View style={styles.controlsWrapper}>
+      <View style={formStyles.controlsWrapper}>
         <Button
           onPress={() => onSave(user)}
           buttonText="Save"
-          bodyStyles={styles.controlsSave}
+          bodyStyles={formStyles.controlsSave}
         />
         <Button
           onPress={onCancel}
           buttonText="Cancel"
-          bodyStyles={styles.controlsCancel}
+          bodyStyles={formStyles.controlsCancel}
         />
       </View>
     </View>
