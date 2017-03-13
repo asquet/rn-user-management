@@ -1,11 +1,12 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { TouchableHighlight, View } from 'react-native';
+import { menuStyles } from '../../stylesheet';
 import Menu from '../Menu';
 
 function MenuButton({ styles, menuOpen }) {
   return (
-    <TouchableHighlight onPress={menuOpen} style={styles}>
+    <TouchableHighlight onPress={menuOpen} style={[menuStyles.menuButton, styles]}>
       <Icon name="navicon" size={24} />
     </TouchableHighlight>
   );

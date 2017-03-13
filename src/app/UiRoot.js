@@ -66,8 +66,7 @@ function getNavItems(navigator) {
       navigator.replace(ROUTE);
       return;
     }
-    navigator.popToTop();
-    navigator.push(ROUTE);
+    navigator.resetTo(ROUTE);
   }
 
   return [{

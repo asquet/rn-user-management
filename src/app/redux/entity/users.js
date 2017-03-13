@@ -70,6 +70,6 @@ function puchuGen(count) {
 
 const namespace = 'USER';
 
-export const reducer = genReducer(namespace, [...USERS_DEFAULT, ...puchuGen(15)]);
+export const reducer = genReducer(namespace, [...USERS_DEFAULT, ...puchuGen(55)]);
 
 export const actions = genActions(namespace);
