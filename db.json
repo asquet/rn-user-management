@@ -6,13 +6,20 @@
       "birthDate": "1985-11-15",
       "userPic": "https://avatarfiles.alphacoders.com/761/thumb-76101.png",
       "managerId": null,
-      "positionId": 1
+      "positionId": 0
     }
   ],
   "positions":[
     {
-      "id": 1,
-      "name": "Worker"
+      "id": 0,
+      "name": "Worker",
+      "roles": [0]
+    }
+  ],
+  "roles":[
+    {
+      "id":0,
+      "name": "Image howler"
     }
   ]
 }

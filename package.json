@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "devtools": "react-devtools",
+    "json-server": "json-server --watch db.json",
     "test": "jest"
   },
   "dependencies": {
