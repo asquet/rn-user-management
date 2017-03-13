@@ -1,13 +1,13 @@
 import React from 'react';
 import EntityList from '../common/list/EntityList';
-import UserListItem from './ListItem';
+import PositionListItem from './ListItem';
 
-export default function UserList({ goToEdit, users, ...props }) {
+export default function UserList({ goToEdit, positions, ...props }) {
   return (
     <EntityList
-      data={users}
+      data={positions}
       renderListItem={rowData => (
-        <UserListItem
+        <PositionListItem
           {...rowData}
           onRowClick={() => {
             goToEdit(rowData.id);
@@ -19,8 +19,8 @@ export default function UserList({ goToEdit, users, ...props }) {
   );
 }
 
-UserList.propTypes = {
+UserList.propTypes = Object.assign({}, EntityList.propTypes, {
   goToEdit: React.PropTypes.func.isRequired,
-  users: React.PropTypes.arrayOf(React.PropTypes.shape({})).isRequired,
-};
+});
 
+UserList.defaultProps = EntityList.defaultProps;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
 import { listStyles } from '../../../stylesheet';
+import MenuButon from '../MenuButton';
 
 export default function FilterHeading({ onChangeText, searchString }) {
   return (
@@ -11,6 +12,7 @@ export default function FilterHeading({ onChangeText, searchString }) {
         placeholder="Search..."
         value={searchString}
       />
+      <MenuButon />
     </View>
   );
 }

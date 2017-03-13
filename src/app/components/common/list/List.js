@@ -53,7 +53,6 @@ export default function List(
 }
 
 List.propTypes = {
-  dataSource: React.PropTypes.instanceOf(ListView.DataSource).isRequired,
   renderListItem: React.PropTypes.func.isRequired,
   onSearch: React.PropTypes.func.isRequired,
   searchString: React.PropTypes.string.isRequired,

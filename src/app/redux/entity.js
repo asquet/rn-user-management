@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import users from './entity/users';
-import positions from './entity/positions';
+import { reducer as users } from './entity/users';
+import { reducer as positions } from './entity/positions';
 
 export default combineReducers({
   users,

@@ -1,6 +1,6 @@
 import { genReducer, genActions } from './_listGenerators';
 
-const namespace = 'USER';
+const namespace = 'POSITIONS';
 
 export const reducer = genReducer(namespace);
 

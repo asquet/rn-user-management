@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import UserList from './user/UserList';
-import * as uiActions from '../redux/ui/userList.actions';
-import * as entityActions from '../redux/entity/users.action';
+import { actions as uiActions } from '../redux/ui/userList';
+import { actions as entityActions } from '../redux/entity/users';
 
 function mapStateToProps(state, props) {
   const searchString = state.ui.userList.searchString.toUpperCase();

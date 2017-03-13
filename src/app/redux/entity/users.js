@@ -1,4 +1,4 @@
-import * as consts from './users.consts';
+import { genActions, genReducer } from './_entityGenerators';
 
 const USERS_DEFAULT = [
   {
@@ -68,23 +68,8 @@ function puchuGen(count) {
   return res;
 }
 
-export default function users(state = [...USERS_DEFAULT, ...puchuGen(15)], action) {
-  switch (action.type) {
-    case consts.CREATE_ENTITY:
-      return state.concat(action.payload);
+const namespace = 'USER';
 
-    case consts.DELETE_ENTITY:
-      return state.filter(item => item.id !== action.payload);
+export const reducer = genReducer(namespace, [...USERS_DEFAULT, ...puchuGen(15)]);
 
-    case consts.UPDATE_ENTITY:
-      return state.map((item) => {
-        if (item.id === action.payload.id) {
-          return action.payload;
-        }
-        return item;
-      });
-
-    default:
-      return state;
-  }
-}
+export const actions = genActions(namespace);

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import UserForm from './user/UserForm';
 import withActionOnMount from '../hoc/withActionOnMount';
-import * as entityActions from '../redux/entity/users.action';
-import * as uiActions from '../redux/ui/userForm.actions';
+import { actions as entityActions } from '../redux/entity/users';
+import { actions as uiActions } from '../redux/ui/userForm';
 
 function mapStateToProps(state, { userId }) {
   const initUser = state.entity.users.find(u => u.id === userId);
