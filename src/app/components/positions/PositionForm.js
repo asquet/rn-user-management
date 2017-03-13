@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import MultiSelect from 'react-native-multiselect';
 import InputRow from '../common/form/InputRow';
 import Button from '../common/Button';
 import { formStyles } from '../../stylesheet';
@@ -15,8 +16,16 @@ export default function PositionForm({ isNew, position, onChange, onSave, onCanc
         onChange={val => onChange('name', val)}
         label="Name"
       />
-      <InputRow label="roles" >
-        <Text>Here be role multiselect</Text>
+      <InputRow label="roles">
+        <MultiSelect
+          options={roles.map(role => ({ key: role.id, name: role.name }))}
+          renderRow={(row, isSelected) => <Text>{row.name} {isSelected ? ' + ' : ' - '}</Text>}
+          onSelectionChange={
+            (selectedRow, allSelectedRows) => onChange('roles', allSelectedRows)
+          }
+          selectedOptions={position.roles}
+          rowStyle={{ backgroundColor: 'skyblue' }}
+        />
       </InputRow>
       <View style={formStyles.controlsWrapper}>
         <Button

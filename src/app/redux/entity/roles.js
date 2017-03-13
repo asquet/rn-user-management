@@ -2,7 +2,7 @@ import { genActions, genReducer } from './_entityGenerators';
 
 
 const ROLES_DEFAULT = [{
-  id: 0,
+  id: 1,
   name: 'role1',
 }, {
   id: 2,

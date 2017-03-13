@@ -10,7 +10,6 @@ import PositionCreateScreen from './components/PositionCreateScreen';
 import RolesListScreen from './components/RolesListScreen';
 import RoleEditScreen from './components/RoleEditScreen';
 import RoleCreateScreen from './components/RoleCreateScreen';
-
 import Menu from './components/Menu';
 
 const BLOCK_WELCOME = 'WELCOME';
@@ -108,91 +107,73 @@ function getNavItems(navigator) {
 }
 
 export default class UiRoot extends React.Component {
-  static renderScene(route, navigator) {
+  renderScene(route, navigator) {
     switch (route.id) {
       case BLOCK_USERS_CREATE:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <UserCreateScreen
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_USERS_LIST)}
-            />
-          </Menu>
+          <UserCreateScreen
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_USERS_LIST)}
+          />
         );
       case BLOCK_USERS_EDIT:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <UserEditScreen
-              userId={route.itemId}
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_USERS_LIST)}
-            />
-          </Menu>
+          <UserEditScreen
+            userId={route.itemId}
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_USERS_LIST)}
+          />
         );
       case BLOCK_USERS_LIST:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <UserListScreen
-              goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_USERS_CREATE)}
-              goToEdit={itemId => navigatePush(navigator, { id: BLOCK_USERS_EDIT, itemId })}
-            />
-          </Menu>
+          <UserListScreen
+            goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_USERS_CREATE)}
+            goToEdit={itemId => navigatePush(navigator, { id: BLOCK_USERS_EDIT, itemId })}
+          />
         );
 
       case BLOCK_POSITIONS_LIST:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <PositionsListScreen
-              goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_POSITIONS_CREATE)}
-              goToEdit={itemId => navigatePush(navigator, { id: BLOCK_POSITIONS_EDIT, itemId })}
-            />
-          </Menu>
+          <PositionsListScreen
+            goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_POSITIONS_CREATE)}
+            goToEdit={itemId => navigatePush(navigator, { id: BLOCK_POSITIONS_EDIT, itemId })}
+          />
         );
 
       case BLOCK_POSITIONS_EDIT:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <PositionEditScreen
-              positionId={route.itemId}
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_POSITIONS_LIST)}
-            />
-          </Menu>
+          <PositionEditScreen
+            positionId={route.itemId}
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_POSITIONS_LIST)}
+          />
         );
 
       case BLOCK_POSITIONS_CREATE:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <PositionCreateScreen
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_POSITIONS_LIST)}
-            />
-          </Menu>
+          <PositionCreateScreen
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_POSITIONS_LIST)}
+          />
         );
 
       case BLOCK_ROLES_LIST:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <RolesListScreen
-              goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_ROLES_CREATE)}
-              goToEdit={itemId => navigatePush(navigator, { id: BLOCK_ROLES_EDIT, itemId })}
-            />
-          </Menu>
+          <RolesListScreen
+            goToCreate={() => navigatePush(navigator, ROUTES.BLOCK_ROLES_CREATE)}
+            goToEdit={itemId => navigatePush(navigator, { id: BLOCK_ROLES_EDIT, itemId })}
+          />
         );
 
       case BLOCK_ROLES_EDIT:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <RoleEditScreen
-              roleId={route.itemId}
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_ROLES_LIST)}
-            />
-          </Menu>
+          <RoleEditScreen
+            roleId={route.itemId}
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_ROLES_LIST)}
+          />
         );
 
       case BLOCK_ROLES_CREATE:
         return (
-          <Menu menuItems={getNavItems(navigator)}>
-            <RoleCreateScreen
-              goToList={() => navigatePop(navigator, ROUTES.BLOCK_ROLES_LIST)}
-            />
-          </Menu>
+          <RoleCreateScreen
+            goToList={() => navigatePop(navigator, ROUTES.BLOCK_ROLES_LIST)}
+          />
         );
 
       case BLOCK_WELCOME:
@@ -205,11 +186,19 @@ export default class UiRoot extends React.Component {
     }
   }
 
+  renderSceneWithMenu(route, navigator) {
+    return (
+      <Menu menuItems={getNavItems(navigator)}>
+        {this.renderScene(route, navigator)}
+      </Menu>
+    );
+  }
+
   render() {
     return (
       <Navigator
         initialRoute={ROUTES.BLOCK_WELCOME}
-        renderScene={(route, navigator) => UiRoot.renderScene(route, navigator)}
+        renderScene={(route, navigator) => this.renderSceneWithMenu(route, navigator)}
       />
     );
   }
