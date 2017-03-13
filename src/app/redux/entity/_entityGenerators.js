@@ -32,12 +32,18 @@ export function genActions(namespace) {
   };
 }
 
+let id = 100;
+function nextId() {
+  id += 1;
+  return id;
+}
+
 export function genReducer(namespace, DEFAULT) {
   const constants = genConstants(namespace);
   return function users(state = DEFAULT, action) {
     switch (action.type) {
       case constants.CREATE:
-        return state.concat(action.payload);
+        return [...state, Object.assign({ id: nextId() }, action.payload)];
 
       case constants.DELETE:
         return state.filter(item => item.id !== action.payload);

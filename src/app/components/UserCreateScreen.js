@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import UserForm from './user/UserForm';
-import withActionOnMount from '../hoc/withActionOnMount';
 import { actions as entityActions } from '../redux/entity/users';
 import { actions as uiActions } from '../redux/ui/userForm';
 
@@ -15,7 +14,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, { goToList }) {
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
-    init: data => dispatch(uiActions.onInit(data)),
     onSave: (data) => {
       dispatch(entityActions.createEntity(data));
       dispatch(uiActions.onClear());
@@ -29,8 +27,4 @@ function mapDispatchToProps(dispatch, { goToList }) {
 }
 
 export default connect(mapStateToProps,
-  mapDispatchToProps)(
-  withActionOnMount(UserForm, function init() {
-    // TODO expects to be called from line with `call(this, ..)`  Its BAD!!
-    this.props.init(this.props.initData);
-  }));
+  mapDispatchToProps)(UserForm);

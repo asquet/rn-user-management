@@ -11,7 +11,7 @@ export default function UserForm({ isNew, user, onChange, onSave, onCancel, mana
   return (
     <View style={formStyles.container}>
       <Text style={formStyles.header}>
-        { isNew ? 'Create user' : 'EditUser'}
+        { isNew ? 'Create user' : 'Edit user'}
       </Text>
       <InputRow
         label="Name"
