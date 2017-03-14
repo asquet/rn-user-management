@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 import UserList from './user/UserList';
 import { actions as uiActions } from '../redux/ui/userList';
 import { actions as entityActions } from '../redux/entity/users';
+import { filteredListSelector } from '../redux/selectors/userSelectors';
 
 function mapStateToProps(state, props) {
-  const searchString = state.ui.userList.searchString.toUpperCase();
-  const users = searchString ? state.entity.users.filter(
-      u => u.name.toUpperCase().indexOf(searchString) >= 0) : state.entity.users;
+  const users = filteredListSelector(state);
   return Object.assign({
     users,
     searchString: state.ui.userList.searchString,

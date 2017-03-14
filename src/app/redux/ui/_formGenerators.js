@@ -46,5 +46,4 @@ export function genReducer(namespace, DEFAULT) {
         return state;
     }
   }
-
 }

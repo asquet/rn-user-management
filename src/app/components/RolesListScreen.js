@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 import RolesList from './roles/RolesList';
 import { actions as uiActions } from '../redux/ui/rolesList';
 import { actions as entityActions } from '../redux/entity/roles';
+import { filteredListSelector } from '../redux/selectors/rolesSelectors';
 
 function mapStateToProps(state, props) {
-  const searchString = state.ui.rolesList.searchString.toUpperCase();
-  const roles = searchString ? state.entity.roles.filter(
-      u => u.name.toUpperCase().indexOf(searchString) >= 0) : state.entity.roles;
+  const roles = filteredListSelector(state);
   return Object.assign({
     roles,
     searchString: state.ui.rolesList.searchString,
