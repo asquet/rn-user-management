@@ -3,8 +3,8 @@ import { composeWithDevTools } from 'remote-redux-devtools';
 import createSagaMiddleware from 'redux-saga';
 import entity from './entity';
 import ui from './ui';
+import rootSaga from './sagas/_rootSaga';
 
-import userSagas from './sagas/userSagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,6 +14,6 @@ const reducer = combineReducers({
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
-userSagas.forEach(saga => sagaMiddleware.run(saga));
+sagaMiddleware.run(rootSaga);
 
 export default store;

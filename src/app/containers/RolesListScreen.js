@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import RolesList from '../components/roles/RolesList';
 import { actions as uiActions } from '../redux/ui/rolesList';
 import selectors from '../redux/selectors/rolesSelectors';
+import withActionOnMount from '../hoc/withActionOnMount';
 
 function mapStateToProps(state, props) {
   const roles = selectors.filteredListSelector(state);
@@ -19,6 +20,14 @@ function mapDispatchToProps(dispatch) {
     onDelete: (id) => {
       dispatch(uiActions.requestDelete(id));
     },
+    loadData() {
+      dispatch(uiActions.requestLoadList());
+    },
   };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(RolesList);
+
+const cmp = withActionOnMount(RolesList, function init() {
+  this.props.loadData();
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(cmp);

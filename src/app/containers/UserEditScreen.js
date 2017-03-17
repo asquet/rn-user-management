@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import UserForm from '../components/user/UserForm';
 import withActionOnMount from '../hoc/withActionOnMount';
 import { actions as uiActions } from '../redux/ui/userForm';
-import { actions as positionsActions } from '../redux/ui/positionList';
 import userSelectors from '../redux/selectors/userSelectors';
 import positionSelectors from '../redux/selectors/positionsSelectors';
 
@@ -20,7 +19,7 @@ function mapDispatchToProps(dispatch, props) {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
     init: (data) => {
       dispatch(uiActions.onInit(data));
-      dispatch(positionsActions.a);
+      dispatch(uiActions.loadDependencies());
     },
     onSave: (data) => {
       dispatch(uiActions.requestUpdate(data));

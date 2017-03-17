@@ -3,6 +3,7 @@ import UserForm from '../components/user/UserForm';
 import { actions as uiActions } from '../redux/ui/userForm';
 import userSelectors from '../redux/selectors/userSelectors';
 import positionSelectors from '../redux/selectors/positionsSelectors';
+import withActionOnMount from '../hoc/withActionOnMount';
 
 function mapStateToProps(state) {
   const user = userSelectors.formDataSelector(state);
@@ -15,6 +16,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, { goToList }) {
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
+    init: () => {
+      dispatch(uiActions.loadDependencies());
+    },
     onSave: (data) => {
       dispatch(uiActions.requestCreate(data));
       dispatch(uiActions.onClear());
@@ -28,4 +32,7 @@ function mapDispatchToProps(dispatch, { goToList }) {
 }
 
 export default connect(mapStateToProps,
-  mapDispatchToProps)(UserForm);
+  mapDispatchToProps)(withActionOnMount(UserForm, function init() {
+    this.props.init();
+  }));
+

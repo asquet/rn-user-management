@@ -53,8 +53,8 @@ export default function genEntitySagas(api, entityActions, entityConstants) {
     }
   }
 
-  function* watchEntityEvents() {
-    yield [
+  function getEntityEventsWatchers() {
+    return [
       takeLatest(entityConstants.REQUEST_LOAD_DATA, loadData),
       takeLatest(entityConstants.REQUEST_DELETE, deleteEntity),
       takeLatest(entityConstants.REQUEST_UPDATE, updateEntity),
@@ -63,7 +63,7 @@ export default function genEntitySagas(api, entityActions, entityConstants) {
   }
 
   return {
-    watchEntityEvents,
+    getEntityEventsWatchers,
     loadData,
     deleteEntity,
     updateEntity,

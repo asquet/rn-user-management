@@ -9,18 +9,18 @@
       "positionId": 0
     },
     {
-      "name": "asdasd",
-      "birthDate": "",
+      "name": "Test",
+      "birthDate": "2017-03-15",
       "userPic": "",
       "managerId": 0,
       "positionId": "",
       "id": 1
     },
     {
-      "name": "12wsac",
+      "name": "othertest",
       "birthDate": "",
       "userPic": "",
-      "managerId": "",
+      "managerId": 1,
       "positionId": "",
       "id": 2
     }

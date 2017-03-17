@@ -10,4 +10,5 @@ const entitySagas = genEntitySagas(api, entityActions, entityConstants);
 
 const listSagas = genListSagas(entitySagas, listActions, listConstants);
 const formSagas = genFormSagas(entitySagas, formActions, formConstants);
-export default [...listSagas, ...formSagas, ...entitySagas.watchEntityEvents];
+
+export default [...listSagas, ...formSagas, ...entitySagas.getEntityEventsWatchers()];

@@ -72,6 +72,6 @@ const namespace = 'USER';
 
 export const constants = genConstants(namespace);
 
-export const reducer = genReducer(namespace, []);
+export const reducer = genReducer(namespace);
 
 export const actions = genActions(namespace);

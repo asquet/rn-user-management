@@ -26,14 +26,10 @@ export function genListSagas(entitySagas, actions, constants) {
     }
   }
 
-  function* watchListSagas() {
-    yield [
-      takeLatest(constants.REQUEST_LOAD_LIST, getListDataSaga),
-      takeLatest(constants.REQUEST_DELETE_ITEM, deleteEntitySaga),
-    ];
-  }
-
-  return [watchListSagas];
+  return [
+    takeLatest(constants.REQUEST_LOAD_LIST, getListDataSaga),
+    takeLatest(constants.REQUEST_DELETE_ITEM, deleteEntitySaga),
+  ];
 }
 
 export function genFormSagas(entitySagas, actions, constants) {
@@ -60,12 +56,8 @@ export function genFormSagas(entitySagas, actions, constants) {
     }
   }
 
-  function* watchFormData() {
-    yield [
-      takeLatest(constants.REQUEST_CREATE, createEntitySaga),
-      takeLatest(constants.REQUEST_UPDATE, updateEntitySaga),
-    ];
-  }
-
-  return [watchFormData];
+  return [
+    takeLatest(constants.REQUEST_CREATE, createEntitySaga),
+    takeLatest(constants.REQUEST_UPDATE, updateEntitySaga),
+  ];
 }
