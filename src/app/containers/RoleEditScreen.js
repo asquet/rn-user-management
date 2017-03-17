@@ -1,16 +1,15 @@
 import { connect } from 'react-redux';
-import UserForm from './user/UserForm';
+import RolesForm from '../components/roles/RolesForm';
 import withActionOnMount from '../hoc/withActionOnMount';
-import { actions as entityActions } from '../redux/entity/users';
-import { actions as uiActions } from '../redux/ui/userForm';
+import { actions as entityActions } from '../redux/entity/roles';
+import { actions as uiActions } from '../redux/ui/rolesForm';
+import { listSelector } from '../redux/selectors/rolesSelectors';
 
-function mapStateToProps(state, { userId }) {
-  const initUser = state.entity.users.find(u => u.id === userId);
-  const user = state.ui.userForm;
-  const managers = state.entity.users;
-  const positions = state.entity.positions;
+function mapStateToProps(state, { roleId }) {
+  const initRole = listSelector(state).find(u => u.id === roleId);
+  const role = state.ui.rolesForm;
 
-  return { initData: initUser, user, managers, positions, isNew: false };
+  return { initData: initRole, role, isNew: false };
 }
 
 function mapDispatchToProps(dispatch, props) {
@@ -31,6 +30,6 @@ function mapDispatchToProps(dispatch, props) {
 
 export default connect(mapStateToProps,
   mapDispatchToProps)(
-  withActionOnMount(UserForm, function init() {
+  withActionOnMount(RolesForm, function init() {
     this.props.init(this.props.initData);
   }));

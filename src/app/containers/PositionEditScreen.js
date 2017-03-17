@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
-import PositionForm from './positions/PositionForm';
+import PositionForm from '../components/positions/PositionForm';
 import withActionOnMount from '../hoc/withActionOnMount';
 import { actions as entityActions } from '../redux/entity/positions';
 import { actions as uiActions } from '../redux/ui/positionForm';
+import { listSelector } from '../redux/selectors/positionsSelectors';
+import { listSelector as roleListSelector } from '../redux/selectors/rolesSelectors';
 
 function mapStateToProps(state, { positionId }) {
-  const initPosition = state.entity.positions.find(u => u.id === positionId);
+  const initPosition = listSelector(state).find(u => u.id === positionId);
   const position = state.ui.positionForm;
-  const roles = state.entity.roles;
+  const roles = roleListSelector(state);
 
   return { initData: initPosition, position, roles, isNew: false };
 }

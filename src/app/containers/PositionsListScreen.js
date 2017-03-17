@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
-import PositionList from './positions/PositionList';
+import PositionList from '../components/positions/PositionList';
 import { actions as uiActions } from '../redux/ui/positionList';
-import { actions as entityActions } from '../redux/entity/positions';
-import { filteredListSelector } from '../redux/selectors/positionsSelectors';
+import selectors from '../redux/selectors/positionsSelectors';
 
 function mapStateToProps(state, props) {
-  const positions = filteredListSelector(state);
+  const positions = selectors.filteredListSelector(state);
   return Object.assign({
     positions,
-    searchString: state.ui.positionList.searchString,
+    searchString: selectors.listSearchStringSelector(state),
   }, props);
 }
 
@@ -18,7 +17,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(uiActions.setSearchString(text));
     },
     onDelete: (id) => {
-      dispatch(entityActions.deleteEntity(id));
+      dispatch(uiActions.requestDelete(id));
     },
   };
 }

@@ -1,11 +1,13 @@
-import { genActions, genReducer } from './_formGenerators';
+import { genActions, genReducer, genConstants } from './_formGenerators';
 
 const POSITION_FORM_DEFAULT = {
   name: '',
   roles: [],
 };
 
-const namespace = 'POSITION';
+const namespace = 'POSITION_FORM';
+
+export const constants = genConstants(namespace);
 
 export const reducer = genReducer(namespace, POSITION_FORM_DEFAULT);
 

@@ -1,8 +1,12 @@
+import { createAction } from 'redux-actions';
+
 export function genConstants(namespace) {
   return {
-    ON_CHANGE: `${namespace}_FORM_ON_CHANGE`,
-    ON_CLEAR: `${namespace}_FORM_ON_CLEAR`,
-    ON_INIT: `${namespace}_FORM_ON_INIT`,
+    ON_CHANGE: `${namespace}_ON_CHANGE`,
+    ON_CLEAR: `${namespace}_ON_CLEAR`,
+    ON_INIT: `${namespace}_ON_INIT`,
+    REQUEST_CREATE: `${namespace}_REQUEST_CREATE_ENTITY`,
+    REQUEST_UPDATE: `${namespace}_REQUEST_UPDATE_ENTITY`,
   };
 }
 
@@ -18,17 +22,10 @@ export function genActions(namespace) {
         },
       };
     },
-    onClear() {
-      return {
-        type: constants.ON_CLEAR,
-      };
-    },
-    onInit(payload) {
-      return {
-        type: constants.ON_INIT,
-        payload,
-      };
-    },
+    onClear: createAction(constants.ON_CLEAR),
+    onInit: createAction(constants.ON_INIT),
+    requestCreate: createAction(constants.REQUEST_CREATE),
+    requestUpdate: createAction(constants.REQUEST_UPDATE),
   };
 }
 
@@ -37,13 +34,13 @@ export function genReducer(namespace, DEFAULT) {
   return function formReducer(state = DEFAULT, action) {
     switch (action.type) {
       case constants.ON_CHANGE:
-        return Object.assign({}, state, { [action.payload.name]: action.payload.value });
+        return { ...state, [action.payload.name]: action.payload.value };
       case (constants.ON_INIT):
-        return Object.assign({}, action.payload);
+        return { ...action.payload };
       case constants.ON_CLEAR:
         return DEFAULT;
       default:
         return state;
     }
-  }
+  };
 }

@@ -1,4 +1,4 @@
-import { genActions, genReducer } from './_entityGenerators';
+import { genActions, genReducer, genConstants } from './_entityGenerators';
 
 const USERS_DEFAULT = [
   {
@@ -70,6 +70,8 @@ function puchuGen(count) {
 
 const namespace = 'USER';
 
-export const reducer = genReducer(namespace, [...USERS_DEFAULT, ...puchuGen(55)]);
+export const constants = genConstants(namespace);
+
+export const reducer = genReducer(namespace, []);
 
 export const actions = genActions(namespace);

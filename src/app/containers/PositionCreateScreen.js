@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import RolesForm from './roles/RolesForm';
-import { actions as entityActions } from '../redux/entity/roles';
-import { actions as uiActions } from '../redux/ui/rolesForm';
+import PositionForm from '../components/positions/PositionForm';
+import { actions as entityActions } from '../redux/entity/positions';
+import { actions as uiActions } from '../redux/ui/positionForm';
 
 function mapStateToProps(state) {
-  const role = state.ui.rolesForm;
+  const position = state.ui.positionForm;
+  const roles = state.entity.roles;
 
-  return { role, isNew: true };
+  return { position, roles, isNew: true };
 }
 
 function mapDispatchToProps(dispatch, props) {
@@ -25,4 +26,4 @@ function mapDispatchToProps(dispatch, props) {
 }
 
 export default connect(mapStateToProps,
-  mapDispatchToProps)(RolesForm);
+  mapDispatchToProps)(PositionForm);

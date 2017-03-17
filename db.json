@@ -7,18 +7,36 @@
       "userPic": "https://avatarfiles.alphacoders.com/761/thumb-76101.png",
       "managerId": null,
       "positionId": 0
+    },
+    {
+      "name": "asdasd",
+      "birthDate": "",
+      "userPic": "",
+      "managerId": 0,
+      "positionId": "",
+      "id": 1
+    },
+    {
+      "name": "12wsac",
+      "birthDate": "",
+      "userPic": "",
+      "managerId": "",
+      "positionId": "",
+      "id": 2
     }
   ],
-  "positions":[
+  "positions": [
     {
       "id": 0,
       "name": "Worker",
-      "roles": [0]
+      "roles": [
+        0
+      ]
     }
   ],
-  "roles":[
+  "roles": [
     {
-      "id":0,
+      "id": 0,
       "name": "Image howler"
     }
   ]

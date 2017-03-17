@@ -1,10 +1,9 @@
-import { genActions, genReducer } from './_entityGenerators';
-
-
-const DEFAULT_POSITIONS = [{ id: 1, name: 'Pos1', roles: [] }, { id: 2, name: 'Pos2', roles: [] }];
+import { genActions, genReducer, genConstants } from './_entityGenerators';
 
 const namespace = 'POSITION';
 
-export const reducer = genReducer(namespace, DEFAULT_POSITIONS);
+export const constants = genConstants(namespace);
+
+export const reducer = genReducer(namespace);
 
 export const actions = genActions(namespace);

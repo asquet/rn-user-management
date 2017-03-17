@@ -56,5 +56,6 @@ export default function getListStyles({ backgroundColor }) {
       flexDirection: 'row',
       backgroundColor: 'white',
     },
+    footer: { height: 85 },
   });
 }

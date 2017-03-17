@@ -1,7 +1,24 @@
-import { genReducer, genActions } from './_listGenerators';
+import { combineReducers } from 'redux';
+import { genConstants, genReducer, genActions } from './_listGenerators';
+import {
+  genConstants as genAjaxConstants,
+  genReducer as genAjaxReducer,
+  genActions as genAjaxActions,
+} from './_ajaxGenerators';
 
-const namespace = 'USER';
+const namespace = 'USER_LIST';
 
-export const reducer = genReducer(namespace);
+export const constants = {
+  ...genConstants(namespace),
+  ...genAjaxConstants(namespace),
+};
 
-export const actions = genActions(namespace);
+export const reducer = combineReducers({
+  meta: genAjaxReducer(namespace),
+  data: genReducer(namespace),
+});
+
+export const actions = {
+  ...genActions(namespace),
+  ...genAjaxActions(namespace),
+};

@@ -1,7 +1,13 @@
-import { genListSelector } from './_selectorGenerator';
+import { genListPack, genFormPack } from './_selectorGenerator';
 
-export const searchStringSelector = state => state.ui.userList.searchString;
+const listDescSelector = state => state.ui.userList;
 
-export const listSelector = state => state.entity.users;
+const entityHashSelector = state => state.entity.users;
 
-export const filteredListSelector = genListSelector(searchStringSelector, listSelector);
+const formDescSelector = state => state.ui.userForm;
+
+export default {
+  ...genListPack({ listDescSelector, entityHashSelector }),
+  ...genFormPack({ formDescSelector }),
+  entityHashSelector,
+};

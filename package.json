@@ -20,6 +20,9 @@
     "react-native-vector-icons": "^4.0.0",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-saga": "^0.14.3",
+    "remote-redux-devtools": "^0.5.7",
     "reselect": "^2.5.4"
   },
   "devDependencies": {
@@ -30,10 +33,11 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-react-native": "^2.3.1",
+    "eslint-plugin-redux-saga": "^0.3.0",
     "jest": "19.0.2",
     "react-devtools": "^2.0.12",
-    "react-test-renderer": "15.4.2",
-    "remote-redux-devtools": "^0.5.7"
+    "react-test-renderer": "15.4.2"
   },
   "jest": {
     "preset": "react-native"

@@ -33,11 +33,11 @@ export default function List(
             </View>
           </TouchableHighlight>
         )}
-        renderSeparator={(sectionId, rowId) => (
+        renderSeparator={(sectionid, rowId) => (
           <View key={rowId} style={listStyles.listSeparator} />
         )}
         renderHeader={() => (<FilterHeading searchString={searchString} onChangeText={onSearch} />)}
-        renderFooter={() => (<View style={{ height: 85 }} />)}
+        renderFooter={() => (<View style={listStyles.footer} />)}
         rightOpenValue={-80}
       />
       {
@@ -53,6 +53,7 @@ export default function List(
 }
 
 List.propTypes = {
+  dataSource: React.PropTypes.instanceOf(ListView.DataSource).isRequired,
   renderListItem: React.PropTypes.func.isRequired,
   onSearch: React.PropTypes.func.isRequired,
   searchString: React.PropTypes.string.isRequired,

@@ -1,7 +1,7 @@
-import { genListSelector } from './_selectorGenerator';
+import { genListPack } from './_selectorGenerator';
 
-export const searchStringSelector = state => state.ui.rolesList.searchString;
+export const listDescSelector = state => state.ui.rolesList;
 
-export const listSelector = state => state.entity.roles;
+export const entityHashSelector = state => state.entity.roles;
 
-export const filteredListSelector = genListSelector(searchStringSelector, listSelector);
+export default genListPack({ listDescSelector, entityHashSelector });

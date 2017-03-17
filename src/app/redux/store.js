@@ -1,11 +1,19 @@
-import { createStore, combineReducers } from 'redux';
-import devToolsEnhancer from 'remote-redux-devtools';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'remote-redux-devtools';
+import createSagaMiddleware from 'redux-saga';
 import entity from './entity';
 import ui from './ui';
 
-const store = createStore(combineReducers({
+import userSagas from './sagas/userSagas';
+
+const sagaMiddleware = createSagaMiddleware();
+
+const reducer = combineReducers({
   entity,
   ui,
-}), devToolsEnhancer());
+});
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+userSagas.forEach(saga => sagaMiddleware.run(saga));
 
 export default store;

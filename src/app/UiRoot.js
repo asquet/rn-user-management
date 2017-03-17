@@ -1,15 +1,15 @@
 import React from 'react';
 import { Navigator } from 'react-native';
-import TitleScreen from './components/TitleScreen';
-import UserListScreen from './components/UsersListScreen';
-import UserEditScreen from './components/UserEditScreen';
-import UserCreateScreen from './components/UserCreateScreen';
-import PositionsListScreen from './components/PositionsListScreen';
-import PositionEditScreen from './components/PositionEditScreen';
-import PositionCreateScreen from './components/PositionCreateScreen';
-import RolesListScreen from './components/RolesListScreen';
-import RoleEditScreen from './components/RoleEditScreen';
-import RoleCreateScreen from './components/RoleCreateScreen';
+import TitleScreen from './containers/TitleScreen';
+import UserListScreen from './containers/UsersListScreen';
+import UserEditScreen from './containers/UserEditScreen';
+import UserCreateScreen from './containers/UserCreateScreen';
+import PositionsListScreen from './containers/PositionsListScreen';
+import PositionEditScreen from './containers/PositionEditScreen';
+import PositionCreateScreen from './containers/PositionCreateScreen';
+import RolesListScreen from './containers/RolesListScreen';
+import RoleEditScreen from './containers/RoleEditScreen';
+import RoleCreateScreen from './containers/RoleCreateScreen';
 import Menu from './components/Menu';
 
 const BLOCK_WELCOME = 'WELCOME';

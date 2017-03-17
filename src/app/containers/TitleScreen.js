@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { titleScreenStyles } from '../stylesheet';
-import Button from './common/Button';
+import Button from '../components/common/Button';
 
 
 export default function TitleScreen({ proceed }) {

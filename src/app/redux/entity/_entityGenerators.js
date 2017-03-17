@@ -1,7 +1,13 @@
+import { createAction } from 'redux-actions';
+
 export function genConstants(namespace) {
   return {
-    CREATE: `${namespace}_CREATE_ENTITY`,
-    UPDATE: `${namespace}_UPDATE_ENTITY`,
+    REQUEST_LOAD_DATA: `${namespace}_REQUEST_LOAD_DATA`,
+    REQUEST_CREATE: `${namespace}_REQUEST_CREATE_ENTITY`,
+    REQUEST_UPDATE: `${namespace}_REQUEST_UPDATE_ENTITY`,
+    REQUEST_DELETE: `${namespace}_REQUEST_DELETE_ENTITY`,
+    LOAD_DATA: `${namespace}_LOAD_DATA`,
+    CLEAR_DATA: `${namespace}_CLEAR_DATA`,
     DELETE: `${namespace}_DELETE_ENTITY`,
   };
 }
@@ -9,52 +15,34 @@ export function genConstants(namespace) {
 export function genActions(namespace) {
   const constants = genConstants(namespace);
   return {
-    createEntity(payload) {
-      return {
-        type: constants.CREATE,
-        payload,
-      };
-    },
-
-    deleteEntity(payload) {
-      return {
-        type: constants.DELETE,
-        payload,
-      };
-    },
-
-    updateEntity(payload) {
-      return {
-        type: constants.UPDATE,
-        payload,
-      };
-    },
+    requestLoadData: createAction(constants.REQUEST_LOAD_DATA),
+    requestCreate: createAction(constants.REQUEST_CREATE),
+    requestUpdate: createAction(constants.REQUEST_UPDATE),
+    loadData: createAction(constants.LOAD_DATA),
+    clearData: createAction(constants.CLEAR_DATA),
+    deleteEntity: createAction(constants.DELETE),
+    requestDelete: createAction(constants.REQUEST_DELETE),
   };
 }
 
-let id = 100;
-function nextId() {
-  id += 1;
-  return id;
-}
-
-export function genReducer(namespace, DEFAULT) {
+// data: {id1: {k:v, k:v}, id2: {...}, ... }
+export function genReducer(namespace, DEFAULT = {}) {
   const constants = genConstants(namespace);
-  return function users(state = DEFAULT, action) {
+  let res;
+  return function entityReducer(state = DEFAULT, action) {
     switch (action.type) {
-      case constants.CREATE:
-        return [...state, Object.assign({ id: nextId() }, action.payload)];
-
       case constants.DELETE:
-        return state.filter(item => item.id !== action.payload);
+        res = Object.assign({}, state);
+        delete res[action.payload];
+        return res;
+      case constants.LOAD_DATA:
+        return action.payload.reduce((obj, item) => ({
+          ...obj,
+          [item.id]: item,
+        }), Object.assign({}, state));
 
-      case constants.UPDATE:
-        return state.map((item) => {
-          if (item.id === action.payload.id) {
-            return action.payload;
-          }
-          return item;
-        });
+      case constants.CLEAR_DATA:
+        return DEFAULT;
 
       default:
         return state;
