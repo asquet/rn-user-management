@@ -21,6 +21,8 @@ export default function genEntitySagas(api, entityActions, entityConstants) {
 
       yield put(entityActions.loadData([data]));
 
+      yield put(entityActions.createSuccess());
+
       return { data };
     } catch (error) {
       return { error };
@@ -33,6 +35,8 @@ export default function genEntitySagas(api, entityActions, entityConstants) {
       const data = yield resp.json();
 
       yield put(entityActions.loadData([data]));
+
+      yield put(entityActions.updateSuccess());
 
       return { data };
     } catch (error) {

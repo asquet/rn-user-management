@@ -7,22 +7,6 @@
       "userPic": "https://avatarfiles.alphacoders.com/761/thumb-76101.png",
       "managerId": null,
       "positionId": 0
-    },
-    {
-      "name": "Test",
-      "birthDate": "2017-03-15",
-      "userPic": "",
-      "managerId": 0,
-      "positionId": "",
-      "id": 1
-    },
-    {
-      "name": "othertest",
-      "birthDate": "",
-      "userPic": "",
-      "managerId": 1,
-      "positionId": "",
-      "id": 2
     }
   ],
   "positions": [

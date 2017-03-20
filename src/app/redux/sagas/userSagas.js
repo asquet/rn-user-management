@@ -8,11 +8,10 @@ import { actions as formActions, constants as formConstants } from '../ui/userFo
 import { actions as entityActions, constants as entityConstants } from '../entity/users';
 import { actions as positionsEntityActions } from '../entity/positions';
 
-
 const api = new EntityApi('users');
 const entitySagas = genEntitySagas(api, entityActions, entityConstants);
 
-const listSagas = genListSagas(entitySagas, listActions, listConstants);
+const listSagas = genListSagas(entitySagas, entityConstants, listActions, listConstants);
 const formSagas = genFormSagas(entitySagas, formActions, formConstants);
 
 function* loadDependencies() {

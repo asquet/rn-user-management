@@ -1,6 +1,6 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
-export function genListSagas(entitySagas, actions, constants) {
+export function genListSagas(entitySagas, entityConstants, actions, constants) {
   function* getListDataSaga() {
     yield put(actions.requestDataStart());
 
@@ -26,9 +26,14 @@ export function genListSagas(entitySagas, actions, constants) {
     }
   }
 
+  function* reloadListAfterDataChange() {
+    yield put(actions.requestLoadList());
+  }
+
   return [
     takeLatest(constants.REQUEST_LOAD_LIST, getListDataSaga),
     takeLatest(constants.REQUEST_DELETE_ITEM, deleteEntitySaga),
+    takeLatest(entityConstants.CREATE_SUCCESS, reloadListAfterDataChange),
   ];
 }
 

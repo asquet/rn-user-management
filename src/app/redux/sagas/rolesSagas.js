@@ -8,7 +8,7 @@ import { actions as entityActions, constants as entityConstants } from '../entit
 const api = new EntityApi('roles');
 const entitySagas = genEntitySagas(api, entityActions, entityConstants);
 
-const listSagas = genListSagas(entitySagas, listActions, listConstants);
+const listSagas = genListSagas(entitySagas, entityConstants, listActions, listConstants);
 const formSagas = genFormSagas(entitySagas, formActions, formConstants);
 
 export default [...listSagas, ...formSagas, ...entitySagas.getEntityEventsWatchers()];
