@@ -1,7 +1,13 @@
-import { genListPack } from './_selectorGenerator';
+import { genListPack, genFormPack } from './_selectorGenerator';
 
 export const listDescSelector = state => state.ui.rolesList;
 
 export const entityHashSelector = state => state.entity.roles;
 
-export default genListPack({ listDescSelector, entityHashSelector });
+const formDescSelector = state => state.ui.rolesForm;
+
+export default {
+  ...genListPack({ listDescSelector, entityHashSelector }),
+  ...genFormPack({ formDescSelector }),
+  entityHashSelector,
+};

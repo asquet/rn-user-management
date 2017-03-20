@@ -2,7 +2,7 @@ import React from 'react';
 import EntityList from '../common/list/EntityList';
 import PositionListItem from './ListItem';
 
-export default function UserList({ goToEdit, goToCreate, positions, ...props }) {
+export default function PositionsList({ goToEdit, goToCreate, positions, ...props }) {
   return (
     <EntityList
       data={positions}
@@ -20,7 +20,7 @@ export default function UserList({ goToEdit, goToCreate, positions, ...props }) 
   );
 }
 
-UserList.propTypes = {
+PositionsList.propTypes = {
   positions: React.PropTypes.arrayOf(React.PropTypes.shape({
     id: React.PropTypes.number,
     name: React.PropTypes.string,
@@ -29,4 +29,4 @@ UserList.propTypes = {
   goToEdit: React.PropTypes.func.isRequired,
 };
 
-UserList.defaultProps = EntityList.defaultProps;
+PositionsList.defaultProps = EntityList.defaultProps;

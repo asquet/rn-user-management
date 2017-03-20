@@ -38,6 +38,7 @@ export default function List(
         )}
         renderHeader={() => (<FilterHeading searchString={searchString} onChangeText={onSearch} />)}
         renderFooter={() => (<View style={listStyles.footer} />)}
+        enableEmptySections
         rightOpenValue={-80}
       />
       {

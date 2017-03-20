@@ -17,7 +17,7 @@ export default function getMenuStyles({ backgroundColor }) {
     },
 
     listContainer: {
-      flex: 1,
+      flex: 0,
       flexDirection: 'column',
       justifyContent: 'flex-start',
     },

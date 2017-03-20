@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 import PositionForm from '../components/positions/PositionForm';
 import { actions as entityActions } from '../redux/entity/positions';
 import { actions as uiActions } from '../redux/ui/positionForm';
+import positionSelectors from '../redux/selectors/positionsSelectors';
+import rolesSelectors from '../redux/selectors/rolesSelectors';
+import withActionOnMount from '../hoc/withActionOnMount';
 
 function mapStateToProps(state) {
-  const position = state.ui.positionForm;
-  const roles = state.entity.roles;
+  const position = positionSelectors.formDataSelector(state);
+  const roles = rolesSelectors.allDataSelector(state);
 
   return { position, roles, isNew: true };
 }
@@ -13,8 +16,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, props) {
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
+    init: () => dispatch(uiActions.loadDependencies()),
     onSave: (data) => {
-      dispatch(entityActions.createEntity(data));
+      dispatch(entityActions.requestCreate(data));
       dispatch(uiActions.onClear());
       props.goToList();
     },
@@ -26,4 +30,7 @@ function mapDispatchToProps(dispatch, props) {
 }
 
 export default connect(mapStateToProps,
-  mapDispatchToProps)(PositionForm);
+  mapDispatchToProps)(
+  withActionOnMount(PositionForm, function init() {
+    this.props.init();
+  }));

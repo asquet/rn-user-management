@@ -12,8 +12,8 @@ const USER_FORM_DEFAULT = {
   name: '',
   birthDate: '',
   userPic: '',
-  managerId: '',
-  positionId: '',
+  managerId: null,
+  positionId: null,
 };
 
 const namespace = 'USER_FORM';

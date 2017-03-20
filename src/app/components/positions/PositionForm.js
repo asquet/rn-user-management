@@ -48,10 +48,7 @@ PositionForm.propTypes = {
   isNew: React.PropTypes.bool.isRequired,
   position: React.PropTypes.shape({
     name: React.PropTypes.string,
-    roles: React.PropTypes.arrayOf(React.PropTypes.shape({
-      id: React.PropTypes.number,
-      name: React.PropTypes.string,
-    })),
+    roles: React.PropTypes.arrayOf(React.PropTypes.number),
   }).isRequired,
   onChange: React.PropTypes.func.isRequired,
   onSave: React.PropTypes.func.isRequired,

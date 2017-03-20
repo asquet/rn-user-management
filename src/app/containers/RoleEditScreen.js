@@ -3,11 +3,11 @@ import RolesForm from '../components/roles/RolesForm';
 import withActionOnMount from '../hoc/withActionOnMount';
 import { actions as entityActions } from '../redux/entity/roles';
 import { actions as uiActions } from '../redux/ui/rolesForm';
-import { listSelector } from '../redux/selectors/rolesSelectors';
+import rolesSelectors from '../redux/selectors/rolesSelectors';
 
 function mapStateToProps(state, { roleId }) {
-  const initRole = listSelector(state).find(u => u.id === roleId);
-  const role = state.ui.rolesForm;
+  const initRole = rolesSelectors.allDataSelector(state)[roleId];
+  const role = rolesSelectors.formDataSelector(state);
 
   return { initData: initRole, role, isNew: false };
 }
@@ -17,7 +17,7 @@ function mapDispatchToProps(dispatch, props) {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
     init: data => dispatch(uiActions.onInit(data)),
     onSave: (data) => {
-      dispatch(entityActions.updateEntity(data));
+      dispatch(entityActions.requestUpdate(data));
       dispatch(uiActions.onClear());
       props.goToList();
     },

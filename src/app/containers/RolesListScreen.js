@@ -18,7 +18,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(uiActions.setSearchString(text));
     },
     onDelete: (id) => {
-      dispatch(uiActions.requestDelete(id));
+      dispatch(uiActions.requestDeleteItem(id));
     },
     loadData() {
       dispatch(uiActions.requestLoadList());

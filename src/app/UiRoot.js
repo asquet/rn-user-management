@@ -181,6 +181,7 @@ export default class UiRoot extends React.Component {
         return (
           <TitleScreen
             proceed={() => navigatePush(navigator, ROUTES.BLOCK_USERS_LIST)}
+            menuItems={getNavItems(navigator)}
           />
         );
     }
