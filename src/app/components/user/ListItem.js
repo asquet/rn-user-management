@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import Button from '../common/Button';
 import { userList, listStyles } from '../../stylesheet';
+import Avatar from '../common/Avatar';
 
 export default function UserListItem({ name, userPic, onRowClick }) {
   return (
     <View style={listStyles.listRow}>
-      <Image style={userList.userPic} source={{ uri: userPic }} />
+      <Avatar source={{ uri: userPic }} />
       <Text style={userList.userName} numberOfLines={1} ellipsizeMode="tail">{name}</Text>
       <Button buttonText={'>'} onPress={onRowClick} bodyStyles={{ width: 40 }} />
     </View>

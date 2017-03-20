@@ -65,7 +65,6 @@ export default class MyImagePicker extends React.Component {
                 style={{
                   width: 40,
                   height: 40,
-                  borderRadius: 20,
                   marginLeft: 10,
                   marginRight: 10,
                 }}

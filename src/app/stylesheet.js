@@ -13,6 +13,13 @@ export const commonStyles = StyleSheet.create({
   container: {
     backgroundColor: consts.backgroundColor,
   },
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginLeft: 10,
+    marginRight: 10,
+  },
 });
 
 export const formStyles = getFormStyles(consts);
