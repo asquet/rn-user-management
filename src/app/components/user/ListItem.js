@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Button from '../common/Button';
 import { userList, listStyles } from '../../stylesheet';
-import Avatar from '../common/Avatar';
+import Avatar from '../common/Avatar/Avatar';
 
 export default function UserListItem({ name, userPic, onRowClick }) {
   return (

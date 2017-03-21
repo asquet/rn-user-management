@@ -15,6 +15,14 @@
       "managerId": 0,
       "positionId": "",
       "id": 1
+    },
+    {
+      "name": "Jebediah Kerman",
+      "birthDate": "2017-03-01",
+      "userPic": "",
+      "managerId": 0,
+      "positionId": 1,
+      "id": 2
     }
   ],
   "positions": [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { commonStyles } from '../../stylesheet';
+import { commonStyles } from '../../../stylesheet';
 
 export default function Avatar({ source }) {
   return (

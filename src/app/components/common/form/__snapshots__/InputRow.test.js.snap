@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputRow renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 50,
+        "padding": 3,
+      },
+      null,
+    ]
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="InputRow"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    value=""
+  />
+</View>
+`;
