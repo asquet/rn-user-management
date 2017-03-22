@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import ForeignAutocomplete from 'react-native-autocomplete-input';
+import { Text } from '../content/Text';
 
 const styles = StyleSheet.create({
   autocompleteContainer: {
@@ -14,11 +15,14 @@ const styles = StyleSheet.create({
   listItem: {
     padding: 10,
     backgroundColor: '#ffffff',
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderColor: '#C0C0C0',
   },
   separator: {
     flex: 1,
     borderBottomWidth: 1,
-    borderBottomColor: '#c0c0c0',
+    borderBottomColor: '#C0C0C0',
   },
 });
 
@@ -87,27 +91,29 @@ export default class Autocomplete extends React.Component {
     } = this.props;
 
     return (
-      <View style={styles.autocompleteContainer}>
-        <ForeignAutocomplete
-          data={this.getSuggestions()}
-          value={this.state.textValue}
+      <View>
+        <View style={styles.autocompleteContainer}>
+          <ForeignAutocomplete
+            data={this.getSuggestions()}
+            value={this.state.textValue}
 
-          onChangeText={this.onTyping}
+            onChangeText={this.onTyping}
 
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onEndEditing={this.onBlur}
-          blurOnSubmit
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            onEndEditing={this.onBlur}
+            blurOnSubmit
 
-          renderItem={data => (
-            <TouchableOpacity onPress={() => this.onSelect(data)} style={styles.listItem}>
-              <Text>{data}</Text>
-            </TouchableOpacity>
-          )}
+            renderItem={data => (
+              <TouchableOpacity onPress={() => this.onSelect(data)} style={styles.listItem}>
+                <Text>{data}</Text>
+              </TouchableOpacity>
+            )}
 
-          renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-          {...props}
-        />
+            renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+            {...props}
+          />
+        </View>
       </View>
     );
   }

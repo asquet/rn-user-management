@@ -2,8 +2,8 @@ import { Text } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import EntityList from './EntityList';
-import withMenuAwareContext from '../../../../../testUtility/withMenuAwareContext';
-import suppressWarns from '../../../../../testUtility/suppressWarns';
+import withMenuAwareContext from '../../../../../../testUtility/withMenuAwareContext';
+import suppressWarns from '../../../../../../testUtility/suppressWarns';
 
 suppressWarns();
 

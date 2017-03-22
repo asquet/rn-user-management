@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import { Text } from '../content/Text';
+import { formStyles } from '../../../stylesheet';
 
 export default class MyImagePicker extends React.Component {
 
@@ -56,22 +58,18 @@ export default class MyImagePicker extends React.Component {
     const pic = this.state.avatarSource || this.props.value;
 
     return (
-      <View>
+      <View style={formStyles.imapgePickerWrapper}>
+        {
+          pic ?
+            <Image
+              source={{ uri: pic }}
+              style={formStyles.imagePickerImage}
+            />
+            :
+            null
+        }
         <TouchableOpacity onPress={() => this.showPicker()}>
-          {
-            pic ?
-              <Image
-                source={{ uri: pic }}
-                style={{
-                  width: 40,
-                  height: 40,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              :
-              <Text>Select image</Text>
-          }
+          <Text style={formStyles.imagePickerReplaceText}>Select image</Text>
         </TouchableOpacity>
       </View>
     );

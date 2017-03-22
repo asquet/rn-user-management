@@ -12,5 +12,8 @@ export default function getTitleScreenStyles(consts) {
       justifyContent: 'space-around',
       alignItems: 'center',
     },
+    button: {
+      backgroundColor: '#0aaeff',
+    },
   });
 }

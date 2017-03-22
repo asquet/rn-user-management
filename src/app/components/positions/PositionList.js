@@ -1,5 +1,5 @@
 import React from 'react';
-import EntityList from '../common/list/EntityList';
+import EntityList from '../common/list/EntityList/EntityList';
 import PositionListItem from './ListItem';
 
 export default function PositionsList({ goToEdit, goToCreate, positions, ...props }) {

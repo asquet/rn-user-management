@@ -1,18 +1,19 @@
 import React from 'react';
-import { View, Text, Picker } from 'react-native';
+import { View, Picker } from 'react-native';
+import { Heading } from '../common/content/Text';
+import Button from '../common/content/Button';
 import DatePicker from '../common/form/DatePicker';
 import ImagePicker from '../common/form/ImagePicker';
 import Autocomplete from '../common/form/Autocomplete';
 import InputRow from '../common/form/InputRow';
-import Button from '../common/Button';
 import { formStyles } from '../../stylesheet';
 
 export default function UserForm({ isNew, user, onChange, onSave, onCancel, managers, positions }) {
   return (
     <View style={formStyles.container}>
-      <Text style={formStyles.header}>
+      <Heading>
         { isNew ? 'Create user' : 'Edit user'}
-      </Text>
+      </Heading>
       <InputRow
         label="Name"
         value={user.name}
@@ -68,13 +69,13 @@ export default function UserForm({ isNew, user, onChange, onSave, onCancel, mana
       <View style={formStyles.controlsWrapper}>
         <Button
           onPress={() => onSave(user)}
-          buttonText="Save"
-          bodyStyles={formStyles.controlsSave}
+          title="Save"
+          buttonStyle={formStyles.controlsSave}
         />
         <Button
           onPress={onCancel}
-          buttonText="Cancel"
-          bodyStyles={formStyles.controlsCancel}
+          title="Cancel"
+          buttonStyle={formStyles.controlsCancel}
         />
       </View>
     </View>

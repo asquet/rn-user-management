@@ -1,7 +1,7 @@
-export default function getMenuStyles({ backgroundColor }) {
+export default function getMenuStyles(consts) {
   return {
     container: {
-      backgroundColor,
+      backgroundColor: consts.backgroundColor,
       flex: 1,
       padding: 10,
     },

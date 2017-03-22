@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import InputRow from '../common/form/InputRow';
-import Button from '../common/Button';
+import Button from '../common/content/Button';
 import { formStyles } from '../../stylesheet';
 
 export default function PositionForm({ isNew, role, onChange, onSave, onCancel }) {
@@ -18,13 +18,13 @@ export default function PositionForm({ isNew, role, onChange, onSave, onCancel }
       <View style={formStyles.controlsWrapper}>
         <Button
           onPress={() => onSave(role)}
-          buttonText="Save"
-          bodyStyles={formStyles.controlsSave}
+          title="Save"
+          buttonStyle={formStyles.controlsSave}
         />
         <Button
           onPress={onCancel}
-          buttonText="Cancel"
-          bodyStyles={formStyles.controlsCancel}
+          title="Cancel"
+          buttonStyle={formStyles.controlsCancel}
         />
       </View>
     </View>

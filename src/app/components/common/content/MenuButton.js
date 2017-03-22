@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { TouchableOpacity, View } from 'react-native';
-import { menuStyles } from '../../stylesheet';
-import Menu from '../Menu';
+import { menuStyles } from '../../../stylesheet';
+import Menu from '../../Menu';
 
 function MenuButton({ styles, menuOpen }) {
   return (

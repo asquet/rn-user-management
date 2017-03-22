@@ -1,23 +1,27 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput } from 'react-native';
+import { Text } from '../content/Text';
+import { formStyles } from '../../../stylesheet';
 
-const styles = StyleSheet.create({
-  wrapper: {
-    height: 50,
-    padding: 3,
+export default function InputRow(
+  {
+    value,
+    label,
+    onChange,
+    wrapperStyles,
+    children,
+    ...props
   },
-  input: {
-    flex: 1,
-  },
-});
-
-export default function InputRow({ value, label, onChange, wrapperStyles, children, ...props }) {
+) {
   return (
-    <View style={[styles.wrapper, wrapperStyles]}>
+    <View style={[formStyles.inputRowWrapper, wrapperStyles]}>
+      <Text style={formStyles.inputRowLabel}>
+        {label}
+      </Text>
       {
         children ||
         <TextInput
-          style={styles.input}
+          style={formStyles.inputRowInput}
           placeholder={label}
           onChangeText={onChange}
           value={value}
@@ -37,7 +41,8 @@ InputRow.propTypes = {
 };
 
 InputRow.defaultProps = {
-  onChange: () => {},
+  onChange: () => {
+  },
   value: '',
   children: null,
   wrapperStyles: null,

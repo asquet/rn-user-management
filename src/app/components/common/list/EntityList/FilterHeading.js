@@ -1,18 +1,23 @@
 import React from 'react';
-import { View, TextInput } from 'react-native';
-import { listStyles } from '../../../stylesheet';
-import MenuButon from '../MenuButton';
+import { View } from 'react-native';
+import { SearchBar } from 'react-native-elements';
+import { listStyles } from '../../../../stylesheet';
+import MenuButton from '../../content/MenuButton';
+
 
 export default function FilterHeading({ onChangeText, searchString }) {
   return (
     <View style={listStyles.headingContainer}>
-      <TextInput
-        style={listStyles.headingInput}
+      <SearchBar
+        containerStyle={listStyles.headingInputContainer}
+        inputStyle={listStyles.headingInputText}
+        icon={{ style: listStyles.headingIconStyle }}
         onChangeText={onChangeText}
         placeholder="Search..."
         value={searchString}
       />
-      <MenuButon />
+
+      <MenuButton />
     </View>
   );
 }

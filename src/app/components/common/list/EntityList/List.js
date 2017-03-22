@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, ListView, Text, TouchableHighlight } from 'react-native';
+import { View, ListView } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import FilterHeading from './FilterHeading';
-import Button from '../../common/Button';
-import { commonStyles, listStyles } from '../../../stylesheet';
+import Button from '../../content/Button';
+import { listStyles } from '../../../../stylesheet';
 
 export default function List(
   {
@@ -16,24 +16,21 @@ export default function List(
   },
 ) {
   return (
-    <View style={commonStyles.container}>
+    <View style={listStyles.container}>
       <SwipeListView
         dataSource={dataSource}
         renderRow={rowData => renderListItem(rowData)}
         renderHiddenRow={(rowData, secId, rowId, rowMap) => (
-          <TouchableHighlight
+          <Button
             onPress={() => {
               rowMap[`${secId}${rowId}`].closeRow();
               onDelete(rowData.id);
             }}
-            style={listStyles.deleteButton}
-          >
-            <View>
-              <Text style={listStyles.deleteButtonText}>Delete</Text>
-            </View>
-          </TouchableHighlight>
+            buttonStyle={listStyles.deleteButton}
+            title="Delete"
+          />
         )}
-        renderSeparator={(sectionid, rowId) => (
+        renderSeparator={(sectionId, rowId) => (
           <View key={rowId} style={listStyles.listSeparator} />
         )}
         renderHeader={() => (<FilterHeading searchString={searchString} onChangeText={onSearch} />)}
@@ -44,9 +41,10 @@ export default function List(
       {
         onAdd &&
         <Button
-          buttonText="+"
+          title="+"
+          color="blue"
           onPress={onAdd}
-          bodyStyles={listStyles.addButton}
+          buttonStyle={listStyles.addButton}
         />
       }
     </View>

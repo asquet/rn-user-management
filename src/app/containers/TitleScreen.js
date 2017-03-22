@@ -1,31 +1,21 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { titleScreenStyles, menuStyles } from '../stylesheet';
-import Button from '../components/common/Button';
+import { titleScreenStyles } from '../stylesheet';
+import { Text } from '../components/common/content/Text';
+import Screen from '../components/common/layout/Screen';
+import Button from '../components/common/content/Button';
+import LinksList from '../components/common/list/LinksList/LinksList';
 
 export default function TitleScreen({ proceed, menuItems }) {
   return (
-    <View style={titleScreenStyles.container}>
+    <Screen style={titleScreenStyles.container}>
       <Text style={titleScreenStyles.appName}>
-        Hello!
+        Hello, dear friend!
       </Text>
 
-      <View style={menuStyles.listContainer}>
-        {
-          menuItems.map(item => (
-            <TouchableOpacity
-              onPress={item.onPress}
-              key={item.text}
-              style={menuStyles.menuItemButton}
-            >
-              <Text style={menuStyles.menuItemText}>{item.text}</Text>
-            </TouchableOpacity>
-          ))
-        }
-      </View>
+      <LinksList menuItems={menuItems} />
 
-      <Button buttonText="MoveOn" bodyStyle={{ width: 100 }} onPress={proceed} />
-    </View>
+      <Button title="MoveOn" raised buttonStyle={titleScreenStyles.button} onPress={proceed} />
+    </Screen>
   );
 }
 

@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import MultiSelect from 'react-native-multiselect';
+import { View } from 'react-native';
 import InputRow from '../common/form/InputRow';
-import Button from '../common/Button';
+import Button from '../common/content/Button';
+import MultiSelect from '../common/form/MultiSelect';
+import { Text, Heading } from '../common/content/Text';
 import { formStyles } from '../../stylesheet';
 
 export default function PositionForm({ isNew, position, onChange, onSave, onCancel, roles }) {
   return (
     <View style={formStyles.container}>
-      <Text style={formStyles.header}>
+      <Heading>
         { isNew ? 'Create position' : 'Edit position'}
-      </Text>
+      </Heading>
       <InputRow
         value={position.name}
         onChange={val => onChange('name', val)}
@@ -30,13 +31,13 @@ export default function PositionForm({ isNew, position, onChange, onSave, onCanc
       <View style={formStyles.controlsWrapper}>
         <Button
           onPress={() => onSave(position)}
-          buttonText="Save"
-          bodyStyles={formStyles.controlsSave}
+          title="Save"
+          buttonStyle={formStyles.controlsSave}
         />
         <Button
           onPress={onCancel}
-          buttonText="Cancel"
-          bodyStyles={formStyles.controlsCancel}
+          title="Cancel"
+          buttonStyle={formStyles.controlsCancel}
         />
       </View>
     </View>

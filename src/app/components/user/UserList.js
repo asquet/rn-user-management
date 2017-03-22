@@ -1,5 +1,5 @@
 import React from 'react';
-import EntityList from '../common/list/EntityList';
+import EntityList from '../common/list/EntityList/EntityList';
 import UserListItem from './ListItem';
 
 export default function UserList({ goToEdit, goToCreate, users, ...props }) {
