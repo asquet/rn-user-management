@@ -22,15 +22,13 @@ export default function ({ entityName, ListScreen, EditScreen, CreateScreen }) {
     Edit: {
       screen: EditScreen,
       navigationOptions: {
-        title: state => (`Edit ${entityName}`),
-        header,
+        title: `Edit ${entityName}`,
       },
     },
     Create: {
       screen: CreateScreen,
       navigationOptions: {
         title: `${entityName} create`,
-        header,
       },
     },
   });
