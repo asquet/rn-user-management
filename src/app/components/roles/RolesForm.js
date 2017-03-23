@@ -2,15 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import InputRow from '../common/form/InputRow';
 import Button from '../common/content/Button';
-import { Heading } from '../common/content/Text';
 import { formStyles } from '../../stylesheet';
 
 export default function RolesForm({ isNew, role, onChange, onSave, onCancel }) {
   return (
     <View style={formStyles.container}>
-      <Heading>
-        { isNew ? 'Create role' : 'Edit role'}
-      </Heading>
       <InputRow
         value={role.name}
         onChange={val => onChange('name', val)}
@@ -31,7 +27,6 @@ export default function RolesForm({ isNew, role, onChange, onSave, onCancel }) {
     </View>
   );
 }
-
 
 RolesForm.propTypes = {
   isNew: React.PropTypes.bool.isRequired,

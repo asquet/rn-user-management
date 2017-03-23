@@ -13,7 +13,7 @@ function mapStateToProps(state) {
   return { user, managers, positions, isNew: true };
 }
 
-function mapDispatchToProps(dispatch, { goToList }) {
+function mapDispatchToProps(dispatch, props) {
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
     init: () => {
@@ -22,11 +22,14 @@ function mapDispatchToProps(dispatch, { goToList }) {
     onSave: (data) => {
       dispatch(uiActions.requestCreate(data));
       dispatch(uiActions.onClear());
-      goToList();
+      props.goToList();
     },
     onCancel: () => {
       dispatch(uiActions.onClear());
-      goToList();
+      props.goToList();
+    },
+    goToList() {
+      props.navigation.navigate('List');
     },
   };
 }

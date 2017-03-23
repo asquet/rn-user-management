@@ -17,7 +17,6 @@ export default function FilterHeading({ onChangeText, searchString }) {
         value={searchString}
       />
 
-      <MenuButton />
     </View>
   );
 }

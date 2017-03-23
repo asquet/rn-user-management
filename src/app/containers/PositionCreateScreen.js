@@ -26,6 +26,9 @@ function mapDispatchToProps(dispatch, props) {
       dispatch(uiActions.onClear());
       props.goToList();
     },
+    goToList() {
+      props.navigation.navigate('List');
+    },
   };
 }
 

@@ -15,10 +15,13 @@ exports[`UserForm renders correctly 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "fontSize": 30,
-        "fontWeight": "bold",
-      }
+      Array [
+        Object {
+          "color": "#707070",
+          "fontSize": 24,
+        },
+        null,
+      ]
     }
   >
     Create user
@@ -27,19 +30,44 @@ exports[`UserForm renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 50,
+          "height": 64,
+          "marginBottom": 10,
           "padding": 3,
         },
         null,
       ]
     }
   >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontSize": 18,
+          },
+          Object {
+            "color": "#707070",
+            "fontSize": 16,
+            "height": 24,
+            "marginBottom": 0,
+          },
+        ]
+      }
+    >
+      Name
+    </Text>
     <TextInput
       onChangeText={[Function]}
       placeholder="Name"
       style={
         Object {
-          "flex": 1,
+          "borderBottomWidth": 1,
+          "borderColor": "#C0C0C0",
+          "fontSize": 18,
+          "height": 40,
         }
       }
       value="user"
@@ -49,13 +77,35 @@ exports[`UserForm renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 50,
+          "height": 64,
+          "marginBottom": 10,
           "padding": 3,
         },
         null,
       ]
     }
   >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontSize": 18,
+          },
+          Object {
+            "color": "#707070",
+            "fontSize": 16,
+            "height": 24,
+            "marginBottom": 0,
+          },
+        ]
+      }
+    >
+      Birth date
+    </Text>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -80,9 +130,13 @@ exports[`UserForm renders correctly 1`] = `
             Object {
               "width": 142,
             },
-            Object {
-              "flex": 1,
-            },
+            Array [
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#C0C0C0",
+              },
+              null,
+            ],
           ],
         ]
       }
@@ -113,7 +167,9 @@ exports[`UserForm renders correctly 1`] = `
                 "height": 40,
                 "justifyContent": "center",
               },
-              undefined,
+              Object {
+                "borderWidth": 0,
+              },
               false,
               false,
             ]
@@ -128,7 +184,9 @@ exports[`UserForm renders correctly 1`] = `
                 Object {
                   "color": "#333",
                 },
-                undefined,
+                Object {
+                  "fontSize": 18,
+                },
               ]
             }
           >
@@ -145,7 +203,7 @@ exports[`UserForm renders correctly 1`] = `
                 "marginRight": 5,
                 "width": 32,
               },
-              undefined,
+              Object {},
             ]
           }
         />
@@ -398,14 +456,43 @@ exports[`UserForm renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 50,
+          "height": 64,
+          "marginBottom": 10,
           "padding": 3,
         },
         null,
       ]
     }
   >
-    <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontSize": 18,
+          },
+          Object {
+            "color": "#707070",
+            "fontSize": 16,
+            "height": 24,
+            "marginBottom": 0,
+          },
+        ]
+      }
+    >
+      User Pic
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
       <View
         accessibilityComponentType={undefined}
         accessibilityLabel={undefined}
@@ -432,6 +519,19 @@ exports[`UserForm renders correctly 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#707070",
+                "fontSize": 18,
+              },
+              Object {
+                "color": "#6699CC",
+                "height": 40,
+                "paddingTop": 5,
+              },
+            ]
+          }
         >
           Select image
         </Text>
@@ -442,75 +542,99 @@ exports[`UserForm renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 50,
+          "height": 64,
+          "marginBottom": 10,
           "padding": 3,
         },
         null,
       ]
     }
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
-        Object {
-          "flex": 1,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "zIndex": 1,
-        }
+        Array [
+          Object {
+            "color": "#707070",
+            "fontSize": 18,
+          },
+          Object {
+            "color": "#707070",
+            "fontSize": 16,
+            "height": 24,
+            "marginBottom": 0,
+          },
+        ]
       }
     >
+      Manager
+    </Text>
+    <View>
       <View
         style={
-          Array [
-            Object {
-              "zIndex": 1,
-            },
-            undefined,
-          ]
+          Object {
+            "flex": 1,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          }
         }
       >
         <View
           style={
             Array [
               Object {
-                "borderColor": "#b9b9b9",
-                "borderRadius": 1,
-                "borderWidth": 1,
+                "zIndex": 1,
               },
               undefined,
             ]
           }
         >
-          <TextInput
-            blurOnSubmit={true}
-            data={Array []}
-            defaultValue=""
-            onBlur={[Function]}
-            onChangeText={[Function]}
-            onEndEditing={[Function]}
-            onFocus={[Function]}
-            placeholder="Manager not selected"
-            renderItem={[Function]}
-            renderSeparator={[Function]}
-            renderTextInput={[Function]}
+          <View
             style={
               Array [
                 Object {
-                  "backgroundColor": "white",
-                  "height": 40,
-                  "paddingLeft": 3,
+                  "borderColor": "#b9b9b9",
+                  "borderRadius": 1,
+                  "borderWidth": 1,
                 },
                 undefined,
               ]
             }
-            value=""
+          >
+            <TextInput
+              blurOnSubmit={true}
+              data={Array []}
+              defaultValue=""
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onEndEditing={[Function]}
+              onFocus={[Function]}
+              placeholder="Manager not selected"
+              renderItem={[Function]}
+              renderSeparator={[Function]}
+              renderTextInput={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "white",
+                    "height": 40,
+                    "paddingLeft": 3,
+                  },
+                  undefined,
+                ]
+              }
+              value=""
+            />
+          </View>
+          <View
+            style={undefined}
           />
         </View>
-        <View
-          style={undefined}
-        />
       </View>
     </View>
   </View>
@@ -518,13 +642,35 @@ exports[`UserForm renders correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 50,
+          "height": 64,
+          "marginBottom": 10,
           "padding": 3,
         },
         null,
       ]
     }
   >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontSize": 18,
+          },
+          Object {
+            "color": "#707070",
+            "fontSize": 16,
+            "height": 24,
+            "marginBottom": 0,
+          },
+        ]
+      }
+    >
+      Position
+    </Text>
     <View
       style={undefined}
     >
@@ -565,6 +711,7 @@ exports[`UserForm renders correctly 1`] = `
       accessibilityLabel={undefined}
       accessibilityTraits={undefined}
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       onLayout={undefined}
@@ -575,39 +722,100 @@ exports[`UserForm renders correctly 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-          "borderColor": "#55dd66",
-          "borderRadius": 3,
-          "borderWidth": 1,
-          "flex": 1,
-          "opacity": 1,
-          "padding": 5,
-        }
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
       }
       testID={undefined}
       tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Object {
-            "color": "steelblue",
-            "fontSize": 20,
-            "fontWeight": "bold",
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9E9E9E",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 19,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {
+              "padding": 12,
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 3,
+                "padding": 5,
+              },
+              Object {
+                "backgroundColor": "#33CC55",
+                "flex": 1,
+              },
+            ],
+            undefined,
+            undefined,
+          ]
         }
       >
-        Save
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontFamily": undefined,
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontSize": 17.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Save
+        </Text>
+      </View>
     </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
       accessibilityTraits={undefined}
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       onLayout={undefined}
@@ -618,33 +826,93 @@ exports[`UserForm renders correctly 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-          "borderColor": "#dd5555",
-          "borderRadius": 3,
-          "borderWidth": 1,
-          "flex": 1,
-          "opacity": 1,
-          "padding": 5,
-        }
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
       }
       testID={undefined}
       tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Object {
-            "color": "steelblue",
-            "fontSize": 20,
-            "fontWeight": "bold",
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9E9E9E",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 19,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {
+              "padding": 12,
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 3,
+                "padding": 5,
+              },
+              Object {
+                "backgroundColor": "#dd5555",
+                "flex": 1,
+              },
+            ],
+            undefined,
+            undefined,
+          ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontFamily": undefined,
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontSize": 17.5,
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
   </View>
 </View>

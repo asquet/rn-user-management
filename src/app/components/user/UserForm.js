@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Picker } from 'react-native';
-import { Heading } from '../common/content/Text';
 import Button from '../common/content/Button';
 import DatePicker from '../common/form/DatePicker';
 import ImagePicker from '../common/form/ImagePicker';
@@ -11,9 +10,6 @@ import { formStyles } from '../../stylesheet';
 export default function UserForm({ isNew, user, onChange, onSave, onCancel, managers, positions }) {
   return (
     <View style={formStyles.container}>
-      <Heading>
-        { isNew ? 'Create user' : 'Edit user'}
-      </Heading>
       <InputRow
         label="Name"
         value={user.name}

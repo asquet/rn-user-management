@@ -25,9 +25,13 @@ exports[`DatePicker renders correctly 1`] = `
         Object {
           "width": 142,
         },
-        Object {
-          "flex": 1,
-        },
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+            "borderColor": "#C0C0C0",
+          },
+          null,
+        ],
       ],
     ]
   }
@@ -58,7 +62,9 @@ exports[`DatePicker renders correctly 1`] = `
             "height": 40,
             "justifyContent": "center",
           },
-          undefined,
+          Object {
+            "borderWidth": 0,
+          },
           false,
           false,
         ]
@@ -73,7 +79,9 @@ exports[`DatePicker renders correctly 1`] = `
             Object {
               "color": "#333",
             },
-            undefined,
+            Object {
+              "fontSize": 18,
+            },
           ]
         }
       >
@@ -90,7 +98,7 @@ exports[`DatePicker renders correctly 1`] = `
             "marginRight": 5,
             "width": 32,
           },
-          undefined,
+          Object {},
         ]
       }
     />

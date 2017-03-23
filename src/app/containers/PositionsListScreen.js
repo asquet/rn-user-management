@@ -12,7 +12,7 @@ function mapStateToProps(state, props) {
   }, props);
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, props) {
   return {
     onSearch: (text) => {
       dispatch(uiActions.setSearchString(text));
@@ -22,6 +22,12 @@ function mapDispatchToProps(dispatch) {
     },
     loadData() {
       dispatch(uiActions.requestLoadList());
+    },
+    goToEdit(user) {
+      props.navigation.navigate('Edit', { user });
+    },
+    goToCreate() {
+      props.navigation.navigate('Create');
     },
   };
 }

@@ -15,6 +15,9 @@ function mapStateToProps(state, { positionId }) {
 }
 
 function mapDispatchToProps(dispatch, props) {
+  const goToList = () => {
+    props.navigation.navigate('List');
+  };
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
     init: (data) => {
@@ -24,11 +27,11 @@ function mapDispatchToProps(dispatch, props) {
     onSave: (data) => {
       dispatch(entityActions.requestUpdate(data));
       dispatch(uiActions.onClear());
-      props.goToList();
+      goToList();
     },
     onCancel: () => {
       dispatch(uiActions.onClear());
-      props.goToList();
+      goToList();
     },
   };
 }

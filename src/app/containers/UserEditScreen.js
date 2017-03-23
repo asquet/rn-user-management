@@ -5,8 +5,8 @@ import { actions as uiActions } from '../redux/ui/userForm';
 import userSelectors from '../redux/selectors/userSelectors';
 import positionSelectors from '../redux/selectors/positionsSelectors';
 
-function mapStateToProps(state, { userId }) {
-  const initUser = userSelectors.entityHashSelector(state)[userId];
+function mapStateToProps(state, { navigation }) {
+  const initUser = userSelectors.entityHashSelector(state)[navigation.state.params.userId];
   const user = userSelectors.formDataSelector(state);
   const managers = userSelectors.allDataSelector(state);
   const positions = positionSelectors.allDataSelector(state);
@@ -15,6 +15,9 @@ function mapStateToProps(state, { userId }) {
 }
 
 function mapDispatchToProps(dispatch, props) {
+  const goToList = () => {
+    props.navigation.navigate('List');
+  };
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),
     init: (data) => {
@@ -24,11 +27,11 @@ function mapDispatchToProps(dispatch, props) {
     onSave: (data) => {
       dispatch(uiActions.requestUpdate(data));
       dispatch(uiActions.onClear());
-      props.goToList();
+      goToList();
     },
     onCancel: () => {
       dispatch(uiActions.onClear());
-      props.goToList();
+      goToList();
     },
   };
 }

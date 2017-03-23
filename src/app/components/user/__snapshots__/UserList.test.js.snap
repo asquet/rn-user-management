@@ -4,7 +4,7 @@ exports[`UserList renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "white",
+      "flex": 1,
     }
   }
 >
@@ -39,28 +39,142 @@ exports[`UserList renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#C1C1C1",
+            "backgroundColor": "white",
             "flex": 1,
             "flexDirection": "row",
-            "padding": 8,
+            "paddingRight": 8,
           }
         }
       >
-        <TextInput
-          onChangeText={[Function]}
-          placeholder="Search..."
+        <View
           style={
-            Object {
-              "backgroundColor": "white",
-              "borderRadius": 2,
-              "flex": 1,
-              "fontSize": 15,
-              "height": 40,
-              "paddingHorizontal": 8,
-            }
+            Array [
+              Object {
+                "backgroundColor": "#393e42",
+                "borderBottomColor": "#000",
+                "borderBottomWidth": 1,
+                "borderTopColor": "#000",
+                "borderTopWidth": 1,
+              },
+              false,
+              Object {
+                "backgroundColor": "white",
+                "borderBottomWidth": 0,
+                "borderTopWidth": 0,
+                "flex": 1,
+                "height": 50,
+                "margin": 0,
+                "paddingBottom": 3,
+                "paddingLeft": 3,
+                "paddingRight": 3,
+                "paddingTop": 3,
+              },
+            ]
           }
-          value=""
-        />
+        >
+          <TextInput
+            autoCapitalize={undefined}
+            autoCorrect={undefined}
+            autoFocus={undefined}
+            blurOnSubmit={undefined}
+            clear={undefined}
+            clearButtonMode={undefined}
+            clearTextOnFocus={undefined}
+            dataDetectorTypes={undefined}
+            defaultValue={undefined}
+            editable={undefined}
+            enablesReturnKeyAutomatically={undefined}
+            inlineImageLeft={undefined}
+            inlineImagePadding={undefined}
+            isFocused={undefined}
+            keyboardAppearance={undefined}
+            keyboardType={undefined}
+            maxLength={undefined}
+            multiline={undefined}
+            numberOfLines={undefined}
+            onBlur={undefined}
+            onChange={undefined}
+            onChangeText={[Function]}
+            onContentSizeChange={undefined}
+            onEndEditing={undefined}
+            onFocus={undefined}
+            onKeyPress={undefined}
+            onLayout={undefined}
+            onSelectionChange={undefined}
+            onSubmitEditing={undefined}
+            placeholder="Search..."
+            placeholderTextColor="#86939e"
+            returnKeyLabel={undefined}
+            returnKeyType={undefined}
+            secureTextEntry={undefined}
+            selectTextOnFocus={undefined}
+            selectionColor="#86939e"
+            selectionState={undefined}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#303337",
+                  "borderRadius": 3,
+                  "color": "#86939e",
+                  "fontSize": 17.5,
+                  "height": 30,
+                  "margin": 8,
+                  "overflow": "hidden",
+                  "paddingLeft": 26,
+                  "paddingRight": 19,
+                },
+                false,
+                false,
+                false,
+                Object {
+                  "backgroundColor": "#DDD",
+                  "color": "#555",
+                  "flex": 1,
+                  "fontSize": 18,
+                  "height": 44,
+                  "margin": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 30,
+                },
+              ]
+            }
+            underlineColorAndroid="transparent"
+            value=""
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#86939e",
+                  "fontSize": 16,
+                },
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "left": 16,
+                    "position": "absolute",
+                    "top": 15.5,
+                  },
+                  Object {
+                    "fontSize": 24,
+                    "left": 8,
+                    "top": 13,
+                  },
+                ],
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -148,28 +262,91 @@ exports[`UserList renders correctly 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                 },
-                Object {
-                  "alignSelf": "flex-end",
-                  "backgroundColor": "red",
-                  "height": 50,
-                  "padding": 10,
-                  "width": 80,
-                },
+                undefined,
               ]
             }
             testID={undefined}
             tvParallaxProperties={undefined}
           >
-            <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#9E9E9E",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "marginLeft": 15,
+                    "marginRight": 15,
+                    "padding": 19,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "padding": 12,
+                  },
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderRadius": 3,
+                      "padding": 5,
+                    },
+                    Object {
+                      "alignSelf": "flex-end",
+                      "backgroundColor": "red",
+                      "borderRadius": 0,
+                      "borderWidth": 0,
+                      "flex": 0,
+                      "height": 50,
+                      "marginRight": 0,
+                      "padding": 10,
+                      "width": 80,
+                    },
+                  ],
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
               <Text
                 accessible={true}
                 allowFontScaling={true}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "white",
-                    "fontSize": 18,
-                  }
+                  Array [
+                    Object {
+                      "fontFamily": undefined,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Array [
+                      Object {
+                        "color": "white",
+                        "fontSize": 20,
+                      },
+                      undefined,
+                      Object {
+                        "fontSize": 17.5,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                    ],
+                  ]
                 }
               >
                 Delete
@@ -230,6 +407,7 @@ exports[`UserList renders correctly 1`] = `
                   "backgroundColor": "white",
                   "flex": 1,
                   "flexDirection": "row",
+                  "height": 50,
                   "paddingBottom": 5,
                   "paddingLeft": 5,
                   "paddingRight": 15,
@@ -255,11 +433,21 @@ exports[`UserList renders correctly 1`] = `
                 ellipsizeMode="tail"
                 numberOfLines={1}
                 style={
-                  Object {
-                    "flex": 1,
-                    "fontSize": 20,
-                    "overflow": "hidden",
-                  }
+                  Array [
+                    Object {
+                      "color": "#707070",
+                      "fontSize": 18,
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                        "overflow": "hidden",
+                      },
+                      Object {
+                        "fontSize": 20,
+                      },
+                    ],
+                  ]
                 }
               >
                 user 1
@@ -269,6 +457,7 @@ exports[`UserList renders correctly 1`] = `
                 accessibilityLabel={undefined}
                 accessibilityTraits={undefined}
                 accessible={true}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 onLayout={undefined}
@@ -279,33 +468,126 @@ exports[`UserList renders correctly 1`] = `
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "borderColor": "steelblue",
-                    "borderRadius": 3,
-                    "borderWidth": 1,
-                    "opacity": 1,
-                    "padding": 5,
-                    "width": 40,
-                  }
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                  ]
                 }
                 testID={undefined}
                 tvParallaxProperties={undefined}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
+                <View
                   style={
-                    Object {
-                      "color": "steelblue",
-                      "fontSize": 20,
-                      "fontWeight": "bold",
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#9E9E9E",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                        "marginLeft": 15,
+                        "marginRight": 15,
+                        "padding": 19,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      Object {
+                        "padding": 12,
+                      },
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "borderRadius": 3,
+                          "padding": 5,
+                        },
+                        Object {
+                          "backgroundColor": "white",
+                          "borderColor": "#6699CC",
+                          "borderWidth": 1,
+                          "height": 40,
+                          "paddingLeft": 5,
+                          "paddingRight": 5,
+                          "width": 40,
+                        },
+                      ],
+                      undefined,
+                      undefined,
+                    ]
                   }
                 >
-                  &gt;
-                </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={false}
+                    ellipsizeMode="tail"
+                    style={
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 18,
+                        },
+                        Array [
+                          Object {
+                            "marginRight": 10,
+                          },
+                          Object {
+                            "color": "#707070",
+                            "fontSize": 24,
+                            "marginRight": 0,
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": undefined,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        Array [
+                          Object {
+                            "color": "white",
+                            "fontSize": 20,
+                          },
+                          undefined,
+                          Object {
+                            "fontSize": 17.5,
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ]
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -352,28 +634,91 @@ exports[`UserList renders correctly 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                 },
-                Object {
-                  "alignSelf": "flex-end",
-                  "backgroundColor": "red",
-                  "height": 50,
-                  "padding": 10,
-                  "width": 80,
-                },
+                undefined,
               ]
             }
             testID={undefined}
             tvParallaxProperties={undefined}
           >
-            <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#9E9E9E",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "marginLeft": 15,
+                    "marginRight": 15,
+                    "padding": 19,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  Object {
+                    "padding": 12,
+                  },
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "borderRadius": 3,
+                      "padding": 5,
+                    },
+                    Object {
+                      "alignSelf": "flex-end",
+                      "backgroundColor": "red",
+                      "borderRadius": 0,
+                      "borderWidth": 0,
+                      "flex": 0,
+                      "height": 50,
+                      "marginRight": 0,
+                      "padding": 10,
+                      "width": 80,
+                    },
+                  ],
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
               <Text
                 accessible={true}
                 allowFontScaling={true}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "white",
-                    "fontSize": 18,
-                  }
+                  Array [
+                    Object {
+                      "fontFamily": undefined,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Array [
+                      Object {
+                        "color": "white",
+                        "fontSize": 20,
+                      },
+                      undefined,
+                      Object {
+                        "fontSize": 17.5,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                    ],
+                  ]
                 }
               >
                 Delete
@@ -434,6 +779,7 @@ exports[`UserList renders correctly 1`] = `
                   "backgroundColor": "white",
                   "flex": 1,
                   "flexDirection": "row",
+                  "height": 50,
                   "paddingBottom": 5,
                   "paddingLeft": 5,
                   "paddingRight": 15,
@@ -459,11 +805,21 @@ exports[`UserList renders correctly 1`] = `
                 ellipsizeMode="tail"
                 numberOfLines={1}
                 style={
-                  Object {
-                    "flex": 1,
-                    "fontSize": 20,
-                    "overflow": "hidden",
-                  }
+                  Array [
+                    Object {
+                      "color": "#707070",
+                      "fontSize": 18,
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                        "overflow": "hidden",
+                      },
+                      Object {
+                        "fontSize": 20,
+                      },
+                    ],
+                  ]
                 }
               >
                 user 2
@@ -473,6 +829,7 @@ exports[`UserList renders correctly 1`] = `
                 accessibilityLabel={undefined}
                 accessibilityTraits={undefined}
                 accessible={true}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 onLayout={undefined}
@@ -483,33 +840,126 @@ exports[`UserList renders correctly 1`] = `
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
                 style={
-                  Object {
-                    "alignItems": "center",
-                    "borderColor": "steelblue",
-                    "borderRadius": 3,
-                    "borderWidth": 1,
-                    "opacity": 1,
-                    "padding": 5,
-                    "width": 40,
-                  }
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                  ]
                 }
                 testID={undefined}
                 tvParallaxProperties={undefined}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
+                <View
                   style={
-                    Object {
-                      "color": "steelblue",
-                      "fontSize": 20,
-                      "fontWeight": "bold",
-                    }
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#9E9E9E",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                        "marginLeft": 15,
+                        "marginRight": 15,
+                        "padding": 19,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      Object {
+                        "padding": 12,
+                      },
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "borderRadius": 3,
+                          "padding": 5,
+                        },
+                        Object {
+                          "backgroundColor": "white",
+                          "borderColor": "#6699CC",
+                          "borderWidth": 1,
+                          "height": 40,
+                          "paddingLeft": 5,
+                          "paddingRight": 5,
+                          "width": 40,
+                        },
+                      ],
+                      undefined,
+                      undefined,
+                    ]
                   }
                 >
-                  &gt;
-                </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={false}
+                    ellipsizeMode="tail"
+                    style={
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 18,
+                        },
+                        Array [
+                          Object {
+                            "marginRight": 10,
+                          },
+                          Object {
+                            "color": "#707070",
+                            "fontSize": 24,
+                            "marginRight": 0,
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": undefined,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        Array [
+                          Object {
+                            "color": "white",
+                            "fontSize": 20,
+                          },
+                          undefined,
+                          Object {
+                            "fontSize": 17.5,
+                          },
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                        ],
+                      ]
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -529,6 +979,7 @@ exports[`UserList renders correctly 1`] = `
     accessibilityLabel={undefined}
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     onLayout={undefined}
@@ -539,39 +990,101 @@ exports[`UserList renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderColor": "steelblue",
-        "borderRadius": 30,
-        "borderWidth": 1,
-        "bottom": 25,
-        "height": 60,
-        "justifyContent": "center",
-        "opacity": 1,
-        "padding": 5,
-        "position": "absolute",
-        "right": 25,
-        "width": 60,
-      }
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
     }
     testID={undefined}
     tvParallaxProperties={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
-        Object {
-          "color": "steelblue",
-          "fontSize": 20,
-          "fontWeight": "bold",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#9E9E9E",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginLeft": 15,
+            "marginRight": 15,
+            "padding": 19,
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Object {
+            "padding": 12,
+          },
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderRadius": 3,
+              "padding": 5,
+            },
+            Object {
+              "backgroundColor": "white",
+              "borderRadius": 30,
+              "bottom": 25,
+              "height": 60,
+              "justifyContent": "center",
+              "position": "absolute",
+              "right": 25,
+              "width": 60,
+            },
+          ],
+          undefined,
+          undefined,
+        ]
       }
     >
-      +
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontFamily": undefined,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Array [
+              Object {
+                "color": "white",
+                "fontSize": 20,
+              },
+              Object {
+                "color": "blue",
+              },
+              Object {
+                "fontSize": 17.5,
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        +
+      </Text>
+    </View>
   </View>
 </View>
 `;

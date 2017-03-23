@@ -5,19 +5,44 @@ exports[`InputRow renders correctly 1`] = `
   style={
     Array [
       Object {
-        "height": 50,
+        "height": 64,
+        "marginBottom": 10,
         "padding": 3,
       },
       null,
     ]
   }
 >
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "#707070",
+          "fontSize": 18,
+        },
+        Object {
+          "color": "#707070",
+          "fontSize": 16,
+          "height": 24,
+          "marginBottom": 0,
+        },
+      ]
+    }
+  >
+    InputRow
+  </Text>
   <TextInput
     onChangeText={[Function]}
     placeholder="InputRow"
     style={
       Object {
-        "flex": 1,
+        "borderBottomWidth": 1,
+        "borderColor": "#C0C0C0",
+        "fontSize": 18,
+        "height": 40,
       }
     }
     value=""

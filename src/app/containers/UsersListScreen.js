@@ -6,13 +6,14 @@ import withActionOnMount from '../hoc/withActionOnMount';
 
 function mapStateToProps(state, props) {
   const users = selectors.filteredListSelector(state);
-  return Object.assign({
+  return {
     users,
     searchString: selectors.listSearchStringSelector(state),
-  }, props);
+    ...props,
+  };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, props) {
   return {
     onSearch: (text) => {
       dispatch(uiActions.setSearchString(text));
@@ -22,6 +23,12 @@ function mapDispatchToProps(dispatch) {
     },
     loadData() {
       dispatch(uiActions.requestLoadList());
+    },
+    goToEdit(userId) {
+      props.navigation.navigate('Edit', { userId });
+    },
+    goToCreate() {
+      props.navigation.navigate('Create');
     },
   };
 }

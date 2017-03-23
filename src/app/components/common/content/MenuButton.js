@@ -2,7 +2,6 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { TouchableOpacity, View } from 'react-native';
 import { menuStyles } from '../../../stylesheet';
-import Menu from '../../Menu';
 
 function MenuButton({ styles, menuOpen }) {
   return (
@@ -20,4 +19,4 @@ MenuButton.defaultProps = {
   styles: null,
 };
 
-export default Menu.withMenuAwareness(MenuButton);
+export default MenuButton;

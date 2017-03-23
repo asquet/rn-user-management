@@ -3,26 +3,28 @@ import { titleScreenStyles } from '../stylesheet';
 import { Text } from '../components/common/content/Text';
 import Screen from '../components/common/layout/Screen';
 import Button from '../components/common/content/Button';
-import LinksList from '../components/common/list/LinksList/LinksList';
 
-export default function TitleScreen({ proceed, menuItems }) {
+export default function TitleScreen({ navigation }) {
   return (
     <Screen style={titleScreenStyles.container}>
       <Text style={titleScreenStyles.appName}>
         Hello, dear friend!
       </Text>
 
-      <LinksList menuItems={menuItems} />
-
-      <Button title="MoveOn" raised buttonStyle={titleScreenStyles.button} onPress={proceed} />
+      <Button
+        title="MoveOn"
+        raised
+        buttonStyle={titleScreenStyles.button}
+        onPress={() => {
+          navigation.navigate('Entities');
+        }}
+      />
     </Screen>
   );
 }
 
 TitleScreen.propTypes = {
-  proceed: React.PropTypes.func.isRequired,
-  menuItems: React.PropTypes.arrayOf(React.PropTypes.shape({
-    text: React.PropTypes.string,
-    onPress: React.PropTypes.func,
-  })).isRequired,
+  navigation: React.PropTypes.shape({
+    navigate: React.PropTypes.func,
+  }).isRequired,
 };

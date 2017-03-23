@@ -314,12 +314,17 @@ exports[`Application renders correctly 1`] = `
         >
           <View
             style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "column",
-                "justifyContent": "space-around",
-              }
+              Array [
+                Object {
+                  "backgroundColor": "white",
+                },
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "space-around",
+                },
+              ]
             }
           >
             <Text
@@ -327,13 +332,19 @@ exports[`Application renders correctly 1`] = `
               allowFontScaling={true}
               ellipsizeMode="tail"
               style={
-                Object {
-                  "fontSize": 30,
-                  "fontWeight": "bold",
-                }
+                Array [
+                  Object {
+                    "color": "#707070",
+                    "fontSize": 18,
+                  },
+                  Object {
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                  },
+                ]
               }
             >
-              Hello!
+              Hello, dear friend!
             </Text>
             <View
               style={
@@ -458,6 +469,7 @@ exports[`Application renders correctly 1`] = `
               accessibilityLabel={undefined}
               accessibilityTraits={undefined}
               accessible={true}
+              hasTVPreferredFocus={undefined}
               hitSlop={undefined}
               isTVSelectable={true}
               onLayout={undefined}
@@ -468,32 +480,100 @@ exports[`Application renders correctly 1`] = `
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
               style={
-                Object {
-                  "alignItems": "center",
-                  "borderColor": "steelblue",
-                  "borderRadius": 3,
-                  "borderWidth": 1,
-                  "opacity": 1,
-                  "padding": 5,
-                }
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  undefined,
+                ]
               }
               testID={undefined}
               tvParallaxProperties={undefined}
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
                 style={
-                  Object {
-                    "color": "steelblue",
-                    "fontSize": 20,
-                    "fontWeight": "bold",
-                  }
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#9E9E9E",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "marginLeft": 15,
+                      "marginRight": 15,
+                      "padding": 19,
+                    },
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    Object {
+                      "shadowColor": "rgba(0,0,0, .4)",
+                      "shadowOffset": Object {
+                        "height": 1,
+                        "width": 1,
+                      },
+                      "shadowOpacity": 1,
+                      "shadowRadius": 1,
+                    },
+                    Object {
+                      "padding": 12,
+                    },
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "borderRadius": 3,
+                        "padding": 5,
+                      },
+                      Object {
+                        "backgroundColor": "#0aaeff",
+                      },
+                    ],
+                    undefined,
+                    undefined,
+                  ]
                 }
               >
-                MoveOn
-              </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": undefined,
+                      },
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 20,
+                        },
+                        undefined,
+                        Object {
+                          "fontSize": 17.5,
+                        },
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  MoveOn
+                </Text>
+              </View>
             </View>
           </View>
           <View

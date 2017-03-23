@@ -3,15 +3,12 @@ import { View } from 'react-native';
 import InputRow from '../common/form/InputRow';
 import Button from '../common/content/Button';
 import MultiSelect from '../common/form/MultiSelect';
-import { Text, Heading } from '../common/content/Text';
+import { Text } from '../common/content/Text';
 import { formStyles } from '../../stylesheet';
 
 export default function PositionForm({ isNew, position, onChange, onSave, onCancel, roles }) {
   return (
     <View style={formStyles.container}>
-      <Heading>
-        { isNew ? 'Create position' : 'Edit position'}
-      </Heading>
       <InputRow
         value={position.name}
         onChange={val => onChange('name', val)}
