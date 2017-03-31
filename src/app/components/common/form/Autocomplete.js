@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import ForeignAutocomplete from 'react-native-autocomplete-input';
 import { Text } from '../content/Text';
+import { ButtonForDialog } from '../layout/ContentDialogs';
 
 const styles = StyleSheet.create({
   autocompleteContainer: {
     flex: 1,
     left: 0,
-    position: 'absolute',
+    //position: 'absolute',
     right: 0,
     top: 0,
     zIndex: 1,
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Autocomplete extends React.Component {
+export class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
 
@@ -42,8 +43,8 @@ export default class Autocomplete extends React.Component {
     this.onSelect = this.onSelect.bind(this);
   }
 
-  componentWillReceiveProps({ selection }) {
-    const valueObject = this.props.options.find(o => o.value === selection);
+  componentWillReceiveProps({ options, selection }) {
+    const valueObject = options.find(o => o.value === selection);
     this.setState({
       textValue: valueObject ? valueObject.label : '',
     });
@@ -72,6 +73,7 @@ export default class Autocomplete extends React.Component {
     this.setState({
       isShowList: false,
     });
+    this.props.hideDialog();
   }
 
   getSuggestions() {
@@ -79,45 +81,50 @@ export default class Autocomplete extends React.Component {
       return [];
     }
     return this.props.options.map(o => o.label).filter(
-      v => v.startsWith(this.state.textValue));
+      v => v.startsWith(this.state.textValue)
+    );
   }
 
   render() {
     const {
-      onChangeValue, // eslint-disable-line
       options, // eslint-disable-line
       selection, // eslint-disable-line
       ...props
     } = this.props;
-
     return (
-      <View>
-        <View style={styles.autocompleteContainer}>
-          <ForeignAutocomplete
-            data={this.getSuggestions()}
-            value={this.state.textValue}
+      <ForeignAutocomplete
+        data={this.getSuggestions()}
+        value={this.state.textValue}
 
-            onChangeText={this.onTyping}
+        onChangeText={this.onTyping}
 
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onEndEditing={this.onBlur}
-            blurOnSubmit
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        onEndEditing={this.onBlur}
+        blurOnSubmit
 
-            renderItem={data => (
-              <TouchableOpacity onPress={() => this.onSelect(data)} style={styles.listItem}>
-                <Text>{data}</Text>
-              </TouchableOpacity>
-            )}
+        renderItem={data => (
+          <TouchableOpacity onPress={() => this.onSelect(data)} style={styles.listItem}>
+            <Text>{data}</Text>
+          </TouchableOpacity>
+        )}
 
-            renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-            {...props}
-          />
-        </View>
-      </View>
+        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+        {...props}
+      />
     );
   }
 }
+
+export default function PopupAutocomplete(props) {
+  const popupButtonText = (props.options.find(o => o.value === props.selection) || {}).label;
+  return (
+    <ButtonForDialog popupButtonText={popupButtonText}>
+      <Autocomplete {...props} />
+    </ButtonForDialog>
+  );
+}
+
 
 Autocomplete.propTypes = {
   onChangeValue: React.PropTypes.func.isRequired,
@@ -132,8 +139,14 @@ Autocomplete.propTypes = {
     React.PropTypes.number,
     React.PropTypes.any,
   ]),
+
+  showDialog: React.PropTypes.func,
+  hideDialog: React.PropTypes.func,
 };
 
 Autocomplete.defaultProps = {
   selection: null,
+  showDialog: null,
+  hideDialog: null,
 };
+

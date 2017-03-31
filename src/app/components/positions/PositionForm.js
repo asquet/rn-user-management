@@ -21,7 +21,7 @@ export default function PositionForm({ isNew, position, onChange, onSave, onCanc
           onSelectionChange={
             (selectedRow, allSelectedRows) => onChange('roles', allSelectedRows)
           }
-          selectedOptions={position.roles}
+          selectedOptions={position.roles || []}
           rowStyle={{ backgroundColor: 'skyblue' }}
         />
       </InputRow>

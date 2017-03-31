@@ -1,5 +1,6 @@
+import { Platform } from 'react-native';
 
-const API_BASE = 'http://10.0.2.2:3000';
+const API_BASE = Platform.OS === 'android' ? 'http://10.0.2.2:3000' : 'http://localhost:3000';
 
 const DEFAULT_HEADER = {
   Accept: 'application/json',

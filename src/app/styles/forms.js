@@ -11,7 +11,7 @@ export default function getFormStyles(consts) {
       backgroundColor: consts.backgroundColor,
     },
     inputRowWrapper: {
-      height: labelHeight + labelMarginBottom + inputHeight,
+      minHeight: labelHeight + labelMarginBottom + inputHeight,
       padding: 3,
       marginBottom: 10,
     },
@@ -31,11 +31,11 @@ export default function getFormStyles(consts) {
       flexDirection: 'row',
     },
     controlsSave: {
-      flex: 1,
+      // flex: 1,
       backgroundColor: '#33CC55',
     },
     controlsCancel: {
-      flex: 1,
+      // flex: 1,
       backgroundColor: '#dd5555',
     },
     datePicker: {
