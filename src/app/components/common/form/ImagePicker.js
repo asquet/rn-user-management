@@ -58,7 +58,7 @@ export default class MyImagePicker extends React.Component {
     const pic = this.state.avatarSource || this.props.value;
 
     return (
-      <View style={formStyles.imapgePickerWrapper}>
+      <View style={formStyles.imagePickerWrapper}>
         {
           pic ?
             <Image

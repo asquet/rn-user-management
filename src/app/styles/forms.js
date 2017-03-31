@@ -54,7 +54,7 @@ export default function getFormStyles(consts) {
       alignItems: 'center',
       padding: 5,
     },
-    imapgePickerWrapper: {
+    imagePickerWrapper: {
       flex: 1,
       flexDirection: 'row',
     },

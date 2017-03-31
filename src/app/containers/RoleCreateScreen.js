@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, props) {
   const goToList = () => {
-    props.navigation.navigate('List');
+    props.navigation.goBack();
   };
   return {
     onChange: (name, val) => dispatch(uiActions.onChange(name, val)),

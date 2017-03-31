@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Picker } from 'react-native';
+import { Picker, View } from 'react-native';
 import Button from '../common/content/Button';
 import DatePicker from '../common/form/DatePicker';
 import ImagePicker from '../common/form/ImagePicker';
 import Autocomplete from '../common/form/Autocomplete';
 import InputRow from '../common/form/InputRow';
 import { formStyles } from '../../stylesheet';
+
 
 export default function UserForm({ isNew, user, onChange, onSave, onCancel, managers, positions }) {
   return (
