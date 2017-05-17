@@ -2,13 +2,6 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import MenuButton from '../components/common/content/MenuButton';
 
-const header = ({ navigate }) => ({
-  right: (
-    <MenuButton
-      menuOpen={() => navigate('DrawerOpen')}
-    />
-  ),
-});
 
 export default function ({ entityName, ListScreen, EditScreen, CreateScreen }) {
   return StackNavigator({
@@ -16,7 +9,11 @@ export default function ({ entityName, ListScreen, EditScreen, CreateScreen }) {
       screen: ListScreen,
       navigationOptions: {
         title: `${entityName} list`,
-        header,
+        headerRight: ({ navigate }) => (
+          <MenuButton
+            menuOpen={() => navigate('DrawerOpen')}
+          />
+        ),
       },
     },
     Edit: {
